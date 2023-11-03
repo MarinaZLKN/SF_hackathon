@@ -1,0 +1,9 @@
+/venv/
+venv/
+.venv/
+env/
+.idea/
+build/
+dist/
+
+node_modules/
