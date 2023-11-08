@@ -1,21 +1,38 @@
 import {YMaps, Map, Placemark} from '@pbe/react-yandex-maps';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 function YandexMaps () {
+    const [position, setPosition] = useState(null);
+
+    useEffect(() => {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            const { latitude, longitude } = position.coords;
+            setPosition({ latitude, longitude });
+          });
+        } else {
+          console.error("Geolocation is not available in this browser.");
+        }
+      }, []);
 
     return(
+        <div>
+      {position ? (
         <YMaps>
-            <div>Приветики карты Yandex!</div>
-        <Map
-            defaultState={{
-              center: [55.751574, 37.573856],
-              zoom: 5,
-            }}
-          >
-            <Placemark geometry={[55.684758, 37.738521]} />
-            <Placemark geometry={[54.684578, 37.733521]} />
-          </Map>
-      </YMaps>
+          <div style={{ width: '100%', height: '400px' }}>
+            <Map
+              defaultState={{ center: [position.latitude, position.longitude], zoom: 10 }}
+              width={'100%'}
+              height={'100%'}
+            >
+              <Placemark geometry={[position.latitude, position.longitude]} />
+            </Map>
+          </div>
+        </YMaps>
+      ) : (
+        <p> Загружаем данные...</p>
+      )}
+    </div>
     );
 }
 
