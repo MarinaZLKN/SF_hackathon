@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from "./Logo";
 import YandexMaps from "./YandexMaps";
+import UselessButton from './UselessButton';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <main>
             <h2> Main</h2>
             <YandexMaps/>
+            <UselessButton/>
         </main>
         <footer>
             <h2> Footer</h2>
