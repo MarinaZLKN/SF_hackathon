@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/UseLessButton.css';
 
 function UselessButton() {
     const [count, setCount] = useState(0);
@@ -8,8 +9,8 @@ function UselessButton() {
     }
 
     return (
-        <div className="UselessButton">
-            <button onClick={handleClick}>{count}</button>
+        <div className="btn-div">
+            <button className="uselessButton" onClick={handleClick}>{count}</button>
         </div>
     );
 }

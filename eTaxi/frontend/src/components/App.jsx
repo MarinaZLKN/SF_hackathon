@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from "./Logo";
 import YandexMaps from "./YandexMaps";
 import UselessButton from './UselessButton';
+import NewComponent from "./NewComponent.jsx";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <header>
             <Logo/>
           <h1> Header </h1>
+          <NewComponent/>
       </header>
         <main>
             <h2> Main</h2>
