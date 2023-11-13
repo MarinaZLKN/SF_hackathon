@@ -14,6 +14,9 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react'],
+          },
         },
       },
       {
@@ -42,5 +45,6 @@ module.exports = {
   devServer: {
         static: "./dist",
         hot: true,
+        open: true,
     },
 };
