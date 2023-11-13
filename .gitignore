@@ -6,6 +6,6 @@ env/
 build/
 dist/
 .pyc
-__pycache/
+__pycache__/
 
 node_modules/
