@@ -3,13 +3,15 @@ from django.db import models
 
 # class User(models.Model):
 #     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     latitude = models.FloatField(null=True, blank=True)
-#     longitude =models.FloatField(null=True, blank=True)
+    # latitude = models.FloatField(null=True, blank=True)
+    # longitude =models.FloatField(null=True, blank=True)
 
 class City(models.Model):
     city = models.CharField(max_length=64)
     phone_number = models.CharField(max_length=16)
     working_hours = models.CharField(max_length=128)
+    latitude = models.FloatField(null=True, blank=True)
+    longitude =models.FloatField(null=True, blank=True)
     slug = models.SlugField(unique=True)
 
     def __str__(self) -> str:

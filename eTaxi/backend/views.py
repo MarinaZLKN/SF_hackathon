@@ -47,7 +47,3 @@ class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
     lookup_field = 'slug'
-
-
-
-
