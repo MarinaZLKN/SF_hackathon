@@ -5,5 +5,7 @@ env/
 .idea/
 build/
 dist/
+.pyc
+__pycache/
 
 node_modules/
