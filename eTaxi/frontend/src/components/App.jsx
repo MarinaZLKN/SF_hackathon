@@ -1,4 +1,5 @@
 import React from 'react';
+import Advantages from './Advantages/Advantages.jsx';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       </header>
         <main>
             <h2> Main</h2>
+            <Advantages />
         </main>
         <footer>
             <h2> Footer</h2>
