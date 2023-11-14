@@ -10,6 +10,7 @@ function App() {
       </header>
         <main>
             <h2> Main</h2>
+            Проверка
             <Advantages />
         </main>
         <footer>
