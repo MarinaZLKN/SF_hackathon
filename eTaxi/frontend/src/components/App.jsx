@@ -1,16 +1,19 @@
 import React from 'react';
 import Advantages from './Advantages/Advantages.jsx';
+import Header from "./Header/Header.jsx";
+import Hero from "./Main/Section1/Hero.jsx";
 
 
 function App() {
   return (
     <div className="main-page">
       <header>
-          <h1> Header </h1>
+          <Header/>
       </header>
         <main>
-            <h2> Main</h2>
-            Проверка
+            <div className="section-1">
+                <Hero/>
+            </div>
             <Advantages />
         </main>
         <footer>

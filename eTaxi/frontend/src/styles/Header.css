@@ -1,0 +1,96 @@
+.header{
+    width: 100%;
+    height: 108px;
+    border-bottom: 0.5px solid var(--Grey);
+    background:  #222;
+    position: fixed;
+    top: 0;
+    color: white;
+    z-index: 1000;
+}
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left{
+    display: flex;
+    padding-top: 24px;
+    padding-left: 60px;
+}
+
+.header-menu{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+}
+.header-menu label {
+  position: relative;
+  cursor: pointer;
+}
+
+.header-menu label::before {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--Yellow);
+  transition: width 0.3s;
+}
+
+.header-menu label:hover::before {
+  width: 100%;
+}
+
+.header-right{
+    display: flex;
+    padding-top: 24px;
+    padding-right: 64px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+}
+
+.header-phone_number{
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+
+}
+.btn-header{
+    display: inline-flex;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--Yellow);
+    width: 223px;
+    height: 60px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    transition: background-color 0.3s;
+}
+
+.btn-header:hover {
+    background-color: white;
+    color: #000;
+}
+.logo{
+    width: 60px;
+    height: 60px;
+}
