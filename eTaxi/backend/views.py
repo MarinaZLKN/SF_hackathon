@@ -1,6 +1,30 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from .models import *
 from .serializers import *
+from .services import find_nearest_city
+
+
+class GetCityInfoByCoordinates(APIView):
+    def post(self, request):
+        try:
+            data = request.data
+            lat = float(data.get('lat'))
+            lon = float(data.get('lon'))
+
+            nearest_city = find_nearest_city(lat, lon)
+
+            if nearest_city:
+                city = City.objects.get(name=nearest_city)
+                serializer = CitySerializer(city)
+
+                return Response({'city': serializer.data})
+            else:
+                print("City not found")
+                return Response({'error': 'Город не найден'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class OfficeViewSet(viewsets.ModelViewSet):
