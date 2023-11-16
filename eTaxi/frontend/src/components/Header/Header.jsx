@@ -7,7 +7,7 @@ import '../../styles/App.css';
 import close from '../../images/close_FILL1_wght200_GRAD0_opsz24 2.png';
 
 
-function Header (){
+function Header ({cityInfo}){
     const [infoBlockVisible, setInfoBlockVisible] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [name, setName] = useState('');
@@ -40,6 +40,11 @@ function Header (){
                     </div>
                     <div className="header-city_selection">
                         <img src={loc}/>
+                        {cityInfo ? (
+                          <span>{cityInfo.city.city}</span>
+                        ) : (
+                          <span>Загрузка...</span>
+                        )}
                     </div>
                 </div>
                 <div className="header-menu">
@@ -52,7 +57,11 @@ function Header (){
                 <div className="header-right">
                     <div className="header-phone_number">
                         <img className="header_phone-icon" src={icon}/>
-                        <p className="header-phone_number">+7(391) 226-94-56</p>
+                        {cityInfo ? (
+                            <p className="header-phone_number">{cityInfo.city.phone_number}</p>
+                        ) : (
+                            <p className="header-phone_number">Загрузка...</p>
+                        )}
                     </div>
                     <div className="header-button">
                         <button className="btn-header" onClick={toggleInfoBlock}>

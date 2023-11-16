@@ -19,7 +19,21 @@ class GetCityInfoByCoordinates(APIView):
                 city = City.objects.get(city=nearest_city)
                 serializer = CitySerializer(city)
 
-                return Response({'city': serializer.data})
+                offices = Office.objects.filter(city=city)
+                office_serializer = OfficeSerializer(offices, many=True)
+
+                cars = Car.objects.filter(city=city)
+                car_serializer = CarSerializer(cars, many=True)
+
+                feedback = Feedback.objects.filter(city=city)
+                feedback_serializer = FeedbackSerializer(feedback, many=True)
+
+                return Response({
+                    'city': serializer.data,
+                    'offices': office_serializer.data,
+                    'cars': car_serializer.data,
+                    'feedback': feedback_serializer.data,
+                })
             else:
                 print("City not found")
                 return Response({'error': 'Город не найден'}, status=status.HTTP_404_NOT_FOUND)
