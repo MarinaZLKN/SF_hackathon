@@ -8,6 +8,7 @@ body {
     --Yellow: #FFCB00;
     --Grey: #CBCCCE;
     --BG: #222222;
+    --BG-light: #F5F5F5;
     --Black: #141414;
     --font-family: Geologica,sans-serif;
 }
@@ -18,6 +19,7 @@ body {
 }
 
 .subtitle {
+    margin-bottom: 80px;
     font-size: 60px;
     font-weight: 400;
     line-height: 76px;
@@ -30,4 +32,8 @@ body {
 
 .yellow-subtitle {
     color: var(--Yellow);
+}
+
+.section-2 {
+    background-color: var(--BG-light);
 }
