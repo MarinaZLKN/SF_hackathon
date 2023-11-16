@@ -34,6 +34,7 @@ body {
     color: var(--Yellow);
 }
 
-.section-2 {
+.section-2,
+.section-4 {
     background-color: var(--BG-light);
 }
