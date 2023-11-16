@@ -1,5 +1,6 @@
 import React from 'react';
 import Subtitle from '../../../Subtitle.jsx';
+import'../../../../styles/Advantages.css'
 
 function Advantages() {
     return (
