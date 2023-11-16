@@ -8,18 +8,21 @@ function App() {
   return (
     <div className="main-page">
       <header>
-          <Header/>
+        <Header />
       </header>
-        <main>
-            <div className="section-1">
-                <Hero/>
-            </div>
-            <Advantages />
-        </main>
-        <footer>
-            <h2> Footer</h2>
+      <main>
+        <div className="section-1">
+          <Hero />
+        </div>
+        <section className='section-2'>
+          <Advantages />
+        </section>
 
-        </footer>
+      </main>
+      <footer>
+        <h2> Footer</h2>
+
+      </footer>
     </div>
   );
 }
