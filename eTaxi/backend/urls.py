@@ -16,4 +16,5 @@ nested_router_city.register(r'offices', OfficeViewSet, basename='city-offices')
 urlpatterns = [
     path('', include(router.urls)),
     path('', include(nested_router_city.urls)),
+    path('getcity/', GetCityInfoByCoordinates.as_view()),
 ]

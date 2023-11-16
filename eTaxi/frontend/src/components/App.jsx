@@ -1,6 +1,7 @@
 import React from 'react';
 import Advantages from './Main/Section2/Advantages/Advantages.jsx';
-import Header from "./Header/Header.jsx";
+// import Header from "./Header/Header.jsx";
+import Header from './Header/Header.js';
 import Hero from "./Main/Section1/Hero.jsx";
 
 

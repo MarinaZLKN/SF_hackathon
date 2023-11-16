@@ -16,7 +16,7 @@ class GetCityInfoByCoordinates(APIView):
             nearest_city = find_nearest_city(lat, lon)
 
             if nearest_city:
-                city = City.objects.get(name=nearest_city)
+                city = City.objects.get(city=nearest_city)
                 serializer = CitySerializer(city)
 
                 return Response({'city': serializer.data})
