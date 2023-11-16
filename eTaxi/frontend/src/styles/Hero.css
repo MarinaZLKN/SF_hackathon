@@ -1,12 +1,7 @@
 .hero-container{
     width: 100%;
-<<<<<<< HEAD
-    height: 1100px;
-    background: var(--BG-dark);
-=======
     height: 1284px;
     background: var(--BG);
->>>>>>> 61864893c2137f027ee42a8003699ff7a3aa7bb6
     display: flex;
     flex-direction: column;
     align-items: center;
