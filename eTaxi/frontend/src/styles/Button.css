@@ -1,0 +1,35 @@
+.custom-next-button {
+    position: absolute;
+    top:634px;
+    left: 1350px;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid white;
+    width: 68px;
+    height: 68px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-prev-button {
+    background: none;
+    position: absolute;
+    top:634px;
+    left: 1270px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 1px solid white;
+    width: 68px;
+    height: 68px;
+    transition: background-color 0.3s, color 0.3s;
+    transform: rotate(180deg);
+}
+
+.custom-next-button:hover,
+.custom-prev-button:hover {
+    background-color: white;
+    color: black;
+}
+
