@@ -1,0 +1,155 @@
+
+.calc-container{
+    height: 1216px;
+    background: var(--BG);
+    padding: 132px 0;
+    width: 100vw;
+}
+.calc-content{
+    display: flex;
+}
+.calc-left{
+    flex: 2;
+
+}
+.calc-title{
+    padding-bottom: 80px;
+}
+
+.calc-title-style{
+    font-family: var(--font-family);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 76px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.calc-slider_container{
+  background-color: var(--BG);
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #ffd400; /* Цвет фона трека - здесь потом поменять*/
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--Yellow);
+  cursor: pointer;
+}
+
+.value-label {
+    margin-top: 5px;
+    color:  var(--Grey);
+    font-family: var(--BG);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+
+.slider-value{
+    color: #FFF;
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+
+.min-max-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    margin-bottom: 32px;
+}
+
+.min-max-values span {
+    color: var(--Grey);
+    text-align: right;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 28px;
+
+}
+
+.calc-right{
+    margin-top: 232px;
+    margin-left: 156px;
+    flex:1;
+}
+.calc-right_title{
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 32px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.calc-right_value1{
+    font-family: var(--font-family);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 76px;
+    text-transform: uppercase;
+    color: var(--Yellow);
+    margin-bottom: 40px;
+}
+.calc-right_value2{
+    font-family: var(--font-family);
+    color: white;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    margin-bottom: 60px;
+}
+
+.calc-right_subtitle{
+    color: var(--Grey);
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 28px;
+    margin-bottom: 32px;
+}
+
+.calc-btn{
+    display: flex;
+    width: 286px;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--Grey);
+    background: var(--BG);
+    color:  #FFF;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+.calc-btn:hover {
+    background-color: var(--Yellow);
+    color: black;
+    border: none;
+}

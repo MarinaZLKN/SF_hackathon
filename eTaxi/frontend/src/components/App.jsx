@@ -4,6 +4,7 @@ import Header from "./Header/Header.jsx";
 import Hero from "./Main/Section1/Hero.jsx";
 import RentAll from "./Main/Section4/RentAll.jsx";
 import RentHow from "./Main/Section4/RentHow.jsx";
+import Calculator from "./Main/Section3A/Calculator.jsx";
 
 
 function App() {
@@ -58,6 +59,9 @@ function App() {
         </div>
         <section className='section-2'>
           <Advantages />
+        </section>
+        <section className="section-3A">
+          <Calculator/>
         </section>
         <section className='section-4'>
           <RentAll />
