@@ -27,7 +27,7 @@
     transform: rotate(180deg);
 }
 
-.custom-next-button:hover,
+.custom-next-button:hover ,
 .custom-prev-button:hover {
     background-color: white;
     color: black;

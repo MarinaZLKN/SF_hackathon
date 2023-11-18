@@ -25,7 +25,7 @@
 .video-pos-single {
     width: 700px;
     height: 430px;
-    margin-bottom: -150px;
+    /*margin-bottom: -150px;*/
 }
 
 .slick-slide {
@@ -35,23 +35,10 @@
     margin-left: 30px;
 }
 
-/*расположение точек!!!!!привести в порядок*/
-.slick-dots {
-    position: absolute;
-    bottom: 30px;
-    text-align: left;
-    /*margin-bottom: -100px;*/
-
-}
-
-.slick-dots li.slick-active button:before
-{
-    opacity: .75;
-    color: var(--Yellow);
-}
 
 .video-pos {
-    transition: transform 0.4s;
+    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: brightness(1);
 
 }
 
@@ -59,7 +46,9 @@
 .video-pos.active {
     transform: scale(1.2);
     z-index: 1;
+    filter: brightness(1);
     margin-left: -75px;
+    transition: transform 0.6s ease, filter 0.6s ease;
 
 }
 
@@ -67,5 +56,34 @@
 .video-pos:not(.active) {
     transform: scale(0.7);
     margin-top: 50px;
+    filter: brightness(0.4);
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
 
+/*  Все для Dots */
+.slick-dots {
+    position: absolute;
+    top: 680px;
+    left: 10px;
+    text-align: left;
+    margin-bottom: -70px;
+}
+
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: var(--Yellow);
+}
+.slick-dots li button:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: var(--Yellow);
+    border-radius: 50%;
+}
+.slick-dots li:not(.slick-active) button:before {
+    opacity: 0.3;
+    border: 1px solid var(--Yellow);
+    background: transparent;
+    color: transparent;
 }

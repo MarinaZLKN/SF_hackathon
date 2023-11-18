@@ -4,12 +4,13 @@ import '../../../styles/VideoSlider.css';
 import '../../../styles/Button.css';
 
 import { CustomPrevButton, CustomNextButton } from './Buttons.jsx';
-
+//TODO по непонятным причинам перестала работать кнопка CustomPrevButton
+//TODO проверить ссылки на видео в БД
 function VideoSlider() {
     const videos=[
          "https://youtu.be/nE_fuIa0SKo?si=4RUqMZkX4jysKYUf",
          "https://youtu.be/q2gRqgS7VPg?si=rxko5xnrGutHspmF",
-         "https://youtu.be/im7lqN4W7Oc?si=NZHJ6oVOUTO0pUeJ",
+         "https://youtu.be/nE_fuIa0SKo?si=4RUqMZkX4jysKYUf",
          "https://youtu.be/KNEDXF-vJAI?si=iLFVqeW8uQGMtxp4",
     ]
 

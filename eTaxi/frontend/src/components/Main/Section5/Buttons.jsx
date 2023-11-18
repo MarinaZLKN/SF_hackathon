@@ -1,8 +1,7 @@
 import React from 'react';
 import '../../../styles/Button.css'
-import arrow from '../../../images/arrow-left.png';
+import arrow from '../../../images/arrow-left.svg';
 
-//TODO сказать дизам заменить картинку
 const CustomPrevButton = ({ onClick }) => (
   <button className="custom-prev-button" onClick={onClick}>
     <img src={arrow} alt="arrow"/>
