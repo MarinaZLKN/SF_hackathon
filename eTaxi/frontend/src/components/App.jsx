@@ -5,6 +5,7 @@ import Hero from "./Main/Section1/Hero.jsx";
 import RentAll from "./Main/Section4/RentAll.jsx";
 import RentHow from "./Main/Section4/RentHow.jsx";
 import Calculator from "./Main/Section3A/Calculator.jsx";
+import VideoSlider from "./Main/Section5/VideoSlider.jsx";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [cityInfo, setCityInfo] = useState(null);
+  const [videos, setVideos] = useState([]);
 
 
   useEffect(() => {
@@ -35,6 +37,11 @@ function App() {
             const data = await response.json();
             console.log('Data', data)
             setCityInfo(data);
+            if (data.feedback) {
+              const videoLinks = data.feedback.map(feedback => feedback.url_video);
+              setVideos(videoLinks);
+              console.log('Ссылки на видео:', videoLinks);
+            }
           } else {
             console.error('Ошибка при получении данных с сервера');
           }
@@ -66,6 +73,9 @@ function App() {
         <section className='section-4'>
           <RentAll />
           <RentHow />
+        </section>
+        <section className="section-5">
+            <VideoSlider/>
         </section>
       </main>
       <footer>
