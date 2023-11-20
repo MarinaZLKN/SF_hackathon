@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import Logo from "./Logo.jsx";
-import loc from '../../images/fluent_location-28-filled.png'
+import loc from '../../images/typcn_location-arrow.svg'
 import icon from '../../images/Call.png';
+import drop from '../../images/ic_sharp-arrow-left.svg'
 import '../../styles/Header.css';
 import '../../styles/App.css';
 import close from '../../images/close_FILL1_wght200_GRAD0_opsz24 2.png';
+import CitiesList from "./CitiesList.jsx";
 
 
 function Header ({cityInfo}){
@@ -14,6 +16,29 @@ function Header ({cityInfo}){
     const [phone, setPhone] = useState('');
     const [comment, setComment] = useState('');
     const [agreed, setAgreed] = useState(false);
+
+
+
+    const [showDropdown, setShowDropdown] = useState(false);
+    const [showCitiesList, setShowCitiesList] = useState(false);
+
+    const handleCityClick = () => {
+        setShowDropdown(true);
+    };
+    const handleCitySelect = () => {
+        setShowDropdown(false);
+        setShowCitiesList(false);
+    };
+
+    const handleYesClick = () => {
+        setShowDropdown(false);
+    };
+
+    const handleNoClick = () => {
+        setShowDropdown(false);
+        setShowCitiesList(true);
+    };
+
     const toggleInfoBlock = () => {
         setInfoBlockVisible(!infoBlockVisible);
     };
@@ -29,7 +54,6 @@ function Header ({cityInfo}){
     };
 
     //TODO после отправки данных добавить обновление заявки
-    //TODO добавить селектор для городов
 
     return(
         <div className={`header ${infoBlockVisible ? 'info-block-open' : ''}`}>
@@ -39,11 +63,25 @@ function Header ({cityInfo}){
                         <Logo/>
                     </div>
                     <div className="header-city_selection">
-                        <img src={loc}/>
-                        {cityInfo ? (
-                          <span>{cityInfo.city.city}</span>
-                        ) : (
-                          <span>Загрузка...</span>
+                        <img src={loc} alt="Location" />
+                        <span className="header-city" onClick={handleCityClick}>
+                            {cityInfo ? cityInfo.city.city : "Загрузка..."}
+                        </span>
+                        <img src={drop} alt="Drop" />
+                      {showDropdown && (
+                        <div className="dropdown">
+                            <p className="dropdown-p">Правильный ли это город?</p>
+                            <div className="dropdown_btns">
+                                <button className="dropdown-btn_yes" onClick={handleYesClick}>Да, верно</button>
+                                <button className="dropdown-btn_no" onClick={handleNoClick}>Нет, изменить</button>
+                            </div>
+
+                        </div>
+                      )}
+                      {showCitiesList && (
+                          <div className="cities-list-1">
+                              <CitiesList handleCitySelect={handleCitySelect}/>
+                          </div>
                         )}
                     </div>
                 </div>

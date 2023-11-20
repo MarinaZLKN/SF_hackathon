@@ -18,36 +18,129 @@
 
 .header-left{
     display: flex;
+    align-items: center;
     padding-top: 24px;
     padding-left: 60px;
 }
 
-.header-menu{
+.header-city_selection{
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header-city{
+    margin-left: 12px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 162px;
+    background-color: #fff;
+    padding: 20px 28px 24px 28px;
+    z-index: 999;
+    width: 324px;
+    height:124px;
+}
+.dropdown::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    top: -10px; /* Расположение над верхней границей .dropdown */
+    left: calc(15% - 16px); /* Расположение по горизонтали в центре .dropdown */
+    border-width: 0 10px 10px 10px; /* Размеры треугольника */
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+.dropdown_btns{
+    display: flex;
+}
+.dropdown-btn_yes{
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--Yellow);
+    width: 112px;
+    height: 40px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.dropdown-btn_yes:hover {
+    background-color: black;
+    color: white;
+}
+
+.dropdown-btn_no{
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #606060;
+    background: transparent;
+    width: 144px;
+    height: 40px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.dropdown-btn_no:hover {
+    background-color: var(--Grey);
+    border: none;
+
+}
+.dropdown p {
     font-family: var(--font-family);
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
+    color: black;
+    margin-bottom: 16px;
+}
+
+.dropdown button {
+    margin-right: 12px;
+}
+
+
+
+.header-menu{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 24px;
     display: flex;
     justify-content: space-between;
     gap: 32px;
+    margin-top: 18px;
     margin-left: 30px; /* !!!!! потом замерить и сделать окончательно когда придут адаптивы*/
 
 }
 .header-menu label {
-  position: relative;
-  cursor: pointer;
+    position: relative;
+    cursor: pointer;
 }
 
 .header-menu label::before {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--Yellow);
-  transition: width 0.3s;
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--Yellow);
+    transition: width 0.3s;
 }
 
 .header-menu label:hover::before {
@@ -213,4 +306,61 @@
 }
 #request-sent{
     margin-bottom: -20px;
+}
+
+/* Стили для списка городов */
+.cities-list {
+    width: 336px;
+    height: 316px;
+    position: absolute;
+    top: 100%; /* Расположение под элементом header-city_selection */
+    left: 162px;
+    background-color: #F5F5F5;
+    padding: 32px 40px; /* Отступы внутри окна */
+    z-index: 999;
+    max-height: 400px;
+
+}
+
+.cities-list::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    top: -9px; /* Расположение над верхней границей .dropdown */
+    left: calc(15% - 16px); /* Расположение по горизонтали в центре .dropdown */
+    border-width: 0 10px 10px 10px; /* Размеры треугольника */
+    border-style: solid;
+    border-color: transparent transparent #F5F5F5 transparent;
+}
+.cities-list_city {
+    font-size: 14px;
+    font-family: var(--font-family);
+    color: black;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    padding-bottom: 15px;
+}
+
+.cities-list_city label {
+    position: relative;
+}
+
+.cities-list_city label::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--Yellow);
+    transition: width 0.3s;
+}
+
+.cities-list_city label:hover::before {
+    width: 100%;
+}
+
+.city-drop {
+    cursor: pointer;
 }
