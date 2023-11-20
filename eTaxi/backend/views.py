@@ -3,8 +3,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
 from .serializers import *
-from .services import find_nearest_city
-from fast_bitrix24 import Bitrix
+from .services import find_nearest_city, send_to_bitrix
 
 class SendLeadToBitrix(APIView):
     def post(self, request):
@@ -12,26 +11,9 @@ class SendLeadToBitrix(APIView):
 
         name = data.get('name')
         phone_number = data.get('phone')
-        city = data.get('city')
+        comment = data.get('comment')
 
-        webhook_url = f'https://b24-018uq1.bitrix24.ru/rest/1/8y52uj9jlkhnyw3c/'
-        b = Bitrix(webhook_url)
-        method = 'crm.lead.add'
-        
-        data = [
-            {
-                'fields':{
-                    'TITLE': 'Новый лид',
-                    'NAME': name,
-                    'PHONE':[
-                        {'VALUE': phone_number}
-                    ],
-                    'ADDRESS_CITY': city
-                } 
-            }   
-        ]
-                    
-        b.call(method, data)
+        send_to_bitrix(name, phone_number, comment)
 
         return Response({'status': 'success'})
 
@@ -57,11 +39,15 @@ class GetCityInfoByCoordinates(APIView):
                 feedback = Feedback.objects.filter(city=city)
                 feedback_serializer = FeedbackSerializer(feedback, many=True)
 
+                employees = Employee.objects.filter(city=city)
+                employee_serializer = EmployeeSerialiazer(employees, many=True)
+
                 return Response({
                     'city': serializer.data,
                     'offices': office_serializer.data,
                     'cars': car_serializer.data,
                     'feedback': feedback_serializer.data,
+                    'employees': employee_serializer.data,
                 })
             else:
                 print("City not found")

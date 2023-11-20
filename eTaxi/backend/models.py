@@ -26,6 +26,14 @@ class Office(models.Model):
         return self.address
     
 
+class Employee(models.Model):
+    employees = models.ForeignKey(City, related_name='employees', on_delete=models.CASCADE)
+    image = models.FileField(upload_to='images/employees', null=True, blank=True)
+    name = models.CharField(max_length=128)
+    position = models.CharField(max_length=255)
+    quote = models.TextField()
+    
+
 class Car(models.Model):
     city = models.ForeignKey(City, related_name='cars', on_delete=models.CASCADE)
     image = models.FileField(upload_to='images', null=True, blank=True)
@@ -40,6 +48,17 @@ class Car(models.Model):
     engine_capacity = models.DecimalField(max_digits=2, decimal_places=1)
     fuel_type = models.CharField(max_length=255)
     rental_price = models.IntegerField()
+    ECONOM_CLASS = 'Эконом'
+    BUSINESS_CLASS = 'Бизнес'
+    COMFORT_CLASS = 'Комфорт'
+    COMFORT_PLUS_CLASS = 'Комфорт+'
+    taxi_class_choises = (
+        (ECONOM_CLASS, 'ЭКОНОМ'),
+        (COMFORT_CLASS, 'КОМФОРТ'),
+        (COMFORT_PLUS_CLASS, 'КОМФОРТ+'),
+        (BUSINESS_CLASS, 'БИЗНЕС'),
+    )
+    taxi_class = models.CharField(max_length=8, choices=taxi_class_choises, default=ECONOM_CLASS)
 
     def __str__(self) -> str:
         return self.model
