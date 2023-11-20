@@ -44,7 +44,7 @@ function VideoSlider() {
                       {videos.map((videoUrl, index) => {
                         const videoId = videoUrl.split('/').pop().split('?')[0];
                         const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-                        console.log('norm links: ', embedUrl)
+                        // console.log('norm links: ', embedUrl)
 
                         return (
                           <div className={`video-pos ${
