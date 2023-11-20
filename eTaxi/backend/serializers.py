@@ -10,7 +10,7 @@ class OfficeSerializer(serializers.ModelSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ('model', 'transmission', 'engine_capacity', 'fuel_type', 'rental_price', 'image')
+        fields = ('taxi_class', 'model', 'transmission', 'engine_capacity', 'fuel_type', 'rental_price', 'image')
 
 
 class FeedbackSerializer(serializers.ModelSerializer):
@@ -19,12 +19,19 @@ class FeedbackSerializer(serializers.ModelSerializer):
         fields = ('name', 'text', 'url_video')
 
 
+class EmployeeSerialiazer(serializers.ModelSerializer):
+    class Meta:
+        model = Employee
+        fields = ('image', 'name', 'position', 'quote')
+
+
 class CitySerializer(serializers.ModelSerializer):
     # offices = OfficeSerializer(many=True)
     offices = serializers.StringRelatedField(many=True)
     cars = CarSerializer(many=True)
     feedback = FeedbackSerializer(many=True)
+    employees = EmployeeSerialiazer(many=True)
 
     class Meta:
         model = City
-        fields = ('id', 'city', 'phone_number', 'working_hours', 'latitude', 'longitude', 'offices', 'cars', 'feedback')
+        fields = ('id', 'city', 'phone_number', 'working_hours', 'latitude', 'longitude', 'offices', 'cars', 'employees', 'feedback')
