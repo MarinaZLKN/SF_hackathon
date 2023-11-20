@@ -39,15 +39,15 @@ class GetCityInfoByCoordinates(APIView):
                 feedback = Feedback.objects.filter(city=city)
                 feedback_serializer = FeedbackSerializer(feedback, many=True)
 
-                employees = Employee.objects.filter(city=city)
-                employee_serializer = EmployeeSerialiazer(employees, many=True)
+                # employees = Employee.objects.filter(city=city)
+                # employee_serializer = EmployeeSerialiazer(employees, many=True)
 
                 return Response({
                     'city': serializer.data,
                     'offices': office_serializer.data,
                     'cars': car_serializer.data,
                     'feedback': feedback_serializer.data,
-                    'employees': employee_serializer.data,
+                    # 'employees': employee_serializer.data,
                 })
             else:
                 print("City not found")
