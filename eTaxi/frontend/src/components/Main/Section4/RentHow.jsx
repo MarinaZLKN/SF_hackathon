@@ -4,7 +4,7 @@ import'../../../styles/Section4.css';
 
 function RentHow() {
     return (
-        <div className='container container--rent-how'>
+        <div className='container container__rent-how'>
             <Subtitle text={
                 <>
                     <span className="black-subtitle">Как взять машину

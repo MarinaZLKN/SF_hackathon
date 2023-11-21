@@ -29,7 +29,7 @@ function Advantages() {
                 </li>
                 <li className='adv-card'>
                     <h3 className='adv-card--subtitle'>
-                        Приоритет по заказам
+                        Приоритет&nbsp;по&nbsp;заказам
                     </h3>
                     <p className='adv-card--text'>
                         У вас будут заказы даже когда их мало. Мы являемся крупнейшим партнёром Яндекс Такси.
