@@ -4,13 +4,13 @@
 
 .list-adv {
     display: flex;
-    justify-content: space-between;
     gap: 24px;
 }
 
 .adv-card {
     padding: 40px;
     background: #FFF;
+    flex-basis: 33%;
 }
 
 .adv-card--subtitle {
