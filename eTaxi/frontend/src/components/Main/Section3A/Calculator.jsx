@@ -8,6 +8,7 @@ const Calculator = () => {
     const [value3, setValue3] = useState(0);
     const [value4, setValue4] = useState(1);
     const [earnings, setEarnings] = useState(0);
+    const [profit, setProfit] = useState(0);
 
 
     const handleChange1 = (event) => setValue1(event.target.value);
@@ -24,8 +25,10 @@ const Calculator = () => {
         };
 
         setEarnings(calculateEarnings());
+        const profitValue = Math.round(((value2/200 * 300) * value4));
+        setProfit(profitValue);
     }, [value1, value2, value3, value4]);
-    //TODO узнать логику для расчета выгоды
+
     //TODO сделать цвет трека восприимчивым к передвижению
     return(
         <div className="container calc-container">
@@ -71,7 +74,7 @@ const Calculator = () => {
                     <p className="calc-right_title">Вы зарабатываете на газу</p>
                     <p className="calc-right_value1">{earnings} ₽</p>
                     <p className="calc-right_title">Ваша выгода</p>
-                    <p className="calc-right_value2">+ 10 000 ₽</p>
+                    <p className="calc-right_value2">+ {profit} ₽</p>
                     <p className="calc-right_subtitle"><sup>*</sup> примерный заработок на основе средних значений</p>
                     <button className="calc-btn">Начать зарабатывать</button>
                 </div>

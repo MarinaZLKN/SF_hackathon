@@ -9,6 +9,7 @@ body {
     --Grey: #CBCCCE;
     --BG: #222222;
     --BG-light: #F5F5F5;
+    --Dark-gray: #606060;
     --Black: #141414;
     --font-family: Geologica,sans-serif;
 }
@@ -35,7 +36,8 @@ body {
 }
 
 .section-2,
-.section-4 {
+.section-4,
+.section-6 {
     background-color: var(--BG-light);
 }
 .section-3A,
