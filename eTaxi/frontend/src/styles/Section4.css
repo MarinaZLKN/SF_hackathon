@@ -39,3 +39,65 @@
     text-transform: uppercase;
     transform: translateY(10%);
 }
+
+.container__rent-how {
+    position: relative;
+    margin-bottom: -435px;
+}
+
+.subtitle__rent-how {
+    position: relative;
+    z-index: 2;
+}
+
+.rent-how__step {
+    width: 248px;
+    color: var(--Black);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.step-img {
+    position: absolute;
+}
+
+.step-1 {
+    left: 137px;
+    top: -12px;
+}
+
+.step-2 {
+    left: 520px;
+    top: 77px;
+}
+
+.step-3 {
+    left: 931px;
+    top: 313px;
+}
+
+
+.step-4 {
+    left: 1329px;
+    top: 502px;
+}
+
+.step-img-01,
+.step-img-02 {
+    left: -63px;
+    top: 75px;
+}
+
+.step-img-03,
+.step-img-04 {
+    top: -268px;
+    left: -61px;
+}
+
+.road-picture {
+    position: relative;
+    top: -107px;
+}
