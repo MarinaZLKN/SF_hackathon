@@ -1,0 +1,86 @@
+.container-section6{
+    height: 900px;
+    background: var(--BG-light);
+    width: 100vw;
+    padding: 132px 0;
+}
+.section6-title{
+    color: black;
+    font-family: var(--font-family);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 76px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+.accordion{
+    border-bottom: 1px solid var(--Grey);
+}
+.icon-wrapper{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.arrow-icon {
+    filter: invert(1);
+    margin-bottom: 5px;
+}
+.arrow-icon img {
+
+}
+
+.open .arrow-icon {
+  transform: rotate(90deg);
+}
+
+.tab-navigation{
+    background: var(--BG-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.tab-title{
+    background-color: var(--BG-light);
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+    cursor: pointer;
+}
+
+.tab-item {
+    position: relative;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.tab-title::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--Yellow);
+    transition: width 0.3s;
+}
+
+.tab-item.active .tab-title::before {
+    width: 100%;
+}
+
+.tab-item:hover .tab-title::before {
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 40px;
+}
+
+
+
+
