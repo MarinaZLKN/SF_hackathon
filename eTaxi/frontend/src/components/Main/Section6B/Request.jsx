@@ -19,7 +19,6 @@ function Request () {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Здесь создаем объект данных
         const requestData = {
           name: formData.name,
           phone: formData.phone,
@@ -28,27 +27,13 @@ function Request () {
 
         console.log('requestData: ', requestData)
 
-
-        // эта логика помещает все в двойные кавычки, если нужно посмотреть вариант как это обычно работает
-        // закомментируй эту функцию и выбери правильный body. Варианты обьектов смотри в консоли :)
-        const requestDataString = JSON.stringify(requestData, null, 4);
-        console.log('requestDataString: ', requestDataString);
-
-        // Выполнение запроса к серверу - нужен ли s в http при отправке запроса?
         try {
           const response = await fetch('http://127.0.0.1:8000/api/v1/sendbitrix', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-
-              //отправляемый обьект
-
-              //этот вариант то, как это обычно работает
-              //body: JSON.stringify(requestData),
-
-              // этот вариант есть нужны двойные кавычки обеим частям
-              body: requestDataString,
+              body: JSON.stringify(requestData),
           });
 
           if (response.ok) {
@@ -64,14 +49,14 @@ function Request () {
     return(
         <div className="container request-container">
             <div className="request-content">
-                <div className="request-title">
+                <div className="request-title-1">
                     <p>Оставить <br/>заявку</p>
                 </div>
                 <div className="request">
                     <form className="request-form" onSubmit={handleSubmit}>
                         <div className="request-row">
                             <div className="request-input">
-                                <label htmlFor="name">Ваше имя:</label>
+                                <label htmlFor="name">Ваше имя</label>
                                 <input
                                     type="text"
                                     id="name"
@@ -81,7 +66,7 @@ function Request () {
                                 />
                             </div>
                             <div className="request-input">
-                                <label htmlFor="phone">Телефон:</label>
+                                <label htmlFor="phone">Телефон</label>
                                 <input
                                   type="tel"
                                   id="phone"
@@ -93,7 +78,7 @@ function Request () {
                             </div>
                         </div>
                           <div className="request-input" id="request-comment">
-                              <label htmlFor="comment">Комментарий:</label>
+                              <label htmlFor="comment">Комментарий</label>
                               <input
                                 id="comment"
                                 name="comment"
