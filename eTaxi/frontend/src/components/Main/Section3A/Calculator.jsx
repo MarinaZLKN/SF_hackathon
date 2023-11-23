@@ -23,7 +23,7 @@ const Calculator = () => {
             }
             return (value1 - value2 - value3) * value4;
         };
-
+        //TODO Саша, проверь формулу расчетa выгоды, пожалуйста
         setEarnings(calculateEarnings());
         const profitValue = Math.round(((value2/200 * 300) * value4));
         setProfit(profitValue);
