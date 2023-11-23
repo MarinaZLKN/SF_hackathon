@@ -9,6 +9,7 @@ import VideoSlider from "./Main/Section5/VideoSlider.jsx";
 import {setCityInfo} from "../actions";
 import {useDispatch, useSelector} from "react-redux";
 import Section6 from "./Main/Section6/Section6.jsx";
+import Request from "./Main/Section6B/Request.jsx";
 
 
 function App() {
@@ -85,6 +86,9 @@ function App() {
         </section >
         <section className="section-6">
           <Section6 />
+        </section>
+        <section className="section-6B">
+            <Request/>
         </section>
       </main>
       <footer>
