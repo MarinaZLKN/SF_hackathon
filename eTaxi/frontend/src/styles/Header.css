@@ -156,8 +156,8 @@
     gap: 36px;
 }
 .header_phone-icon{
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 
 }
 
@@ -203,7 +203,7 @@
     top: 0;
     right: -840px;
     width: 840px;
-    height: 1000px;
+    height: 1080px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -242,13 +242,17 @@
 }
 .request-block{
     width: 504px;
+    height: 1080px;
     text-align: left;
     font-family: var(--font-family);
     padding-top: 100px;
     display: flex;
     flex-direction: column;
 }
+.request-block_upper{
 
+}
+.request-block_down{}
 .input-container {
   padding: 20px 0px;
 }

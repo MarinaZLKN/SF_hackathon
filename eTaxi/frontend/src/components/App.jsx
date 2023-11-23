@@ -20,6 +20,13 @@ function App() {
   const [longitude, setLongitude] = useState(null);
   const [videos, setVideos] = useState([]);
 
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -65,19 +72,19 @@ function App() {
   return (
     <div className="main-page">
       <header>
-        <Header cityInfo={cityInfo} />
+        <Header cityInfo={cityInfo} scrollToSection={scrollToSection}  />
       </header>
       <main>
         <div className="section-1">
           <Hero />
         </div>
-        <section className='section-2'>
+        <section id='advantages' className='section-2'>
           <Advantages />
         </section>
-        <section className="section-3A">
-          <Calculator/>
+        <section id="calculator" className="section-3A">
+          <Calculator scrollToSection={scrollToSection}/>
         </section>
-        <section className='section-4'>
+        <section id="conditions" className='section-4'>
           <RentAll />
           <RentHow />
         </section>
