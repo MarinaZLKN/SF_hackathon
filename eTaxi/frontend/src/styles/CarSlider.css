@@ -1,0 +1,149 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+.car-slider_container{
+    height: 1000px;
+    overflow: hidden;
+}
+.car-slider-title{
+    color: black;
+    font-family: var(--font-family);
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 76px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+.slider_wrapper {
+  width: 100%;
+  max-height: 500px;
+}
+.slider-1 {
+    width: 900px;
+    margin-left: -110px;
+
+}
+
+.slide,
+.slide img {
+    width: 900px;
+    height: 500px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.slide {
+    transform: scale(0.7);
+    transition: 0.5s;
+    margin-bottom: 200px;
+
+}
+
+.slide.active {
+    transform: scale(0.9);
+
+
+}
+.slide_text_wrapper {
+    display: none;
+}
+.slide_text_wrapper.active {
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+    transition: opacity 0.2s;
+}
+
+.slide_text {
+}
+
+.arrow {
+  padding: 5px 15px;
+  display: flex;
+  width: 50px;
+  position: absolute;
+  top: 200px;
+  z-index: 100;
+  cursor: pointer;
+}
+.arrow-right {
+  right: 20px;
+}
+.arrow-left {
+  left: 20px;
+}
+
+.slide_text_car-name{
+    height: 50px;
+}
+.car-name{
+    color: var(--Black, #141414);
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 48px;
+}
+.block-container {
+    display: flex;
+    align-items: flex-start ;
+    margin-top: 25px;
+
+}
+
+
+.value-container {
+    width: 135px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    gap: 12px;
+}
+
+
+.prop_name {
+    color: var(--Dark-gray, #606060);
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.prop-value{
+    color: var(--Black, #141414);
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px
+}
+
+.separator {
+    border-right: 1px solid  var(--Dark-gray);
+    height: 76px;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+.car-btn{
+    display: flex;
+    align-items: flex-end;
+}
+
+.car-slider-btn{
+    margin-bottom: 40px;
+    gap: 10px;
+    border: 1px solid var(--Dark-gray, #606060);
+    width: 170px;
+    height: 60px;
+}
+
+.car-slider-btn:hover{
+    background: black;
+    color: white;
+}

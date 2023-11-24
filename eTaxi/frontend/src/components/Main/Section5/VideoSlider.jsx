@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Slider from "react-slick";
 import '../../../styles/VideoSlider.css';
 import '../../../styles/Button.css';
+import $ from 'jquery';
 
 import { CustomPrevButton, CustomNextButton } from './Buttons.jsx';
 //TODO по непонятным причинам перестала работать кнопка CustomPrevButton
@@ -14,7 +15,7 @@ function VideoSlider() {
          "https://youtu.be/KNEDXF-vJAI?si=iLFVqeW8uQGMtxp4",
     ]
 
-     const settings = {
+     const settings2 = {
         dots: true,
         infinite: true,
         speed: 500,
@@ -40,7 +41,7 @@ function VideoSlider() {
                     <p>Отзывы <br/> водителей Ё-Такси</p>
                 </div>
                 <div className="video-slider">
-                   <Slider {...settings} afterChange={handleAfterChange}>
+                   <Slider {...settings2} afterChange={handleAfterChange}>
                       {videos.map((videoUrl, index) => {
                         const videoId = videoUrl.split('/').pop().split('?')[0];
                         const embedUrl = `https://www.youtube.com/embed/${videoId}`;
@@ -57,7 +58,9 @@ function VideoSlider() {
                               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                               allowFullScreen
                             ></iframe>
+                              <div className="video-driver-name">здесь будет имя, город</div>
                           </div>
+
                         );
                       })}
                    </Slider>

@@ -6,7 +6,6 @@
     height: 1144px;
     background: var(--BG);
     padding: 132px 0;
-
 }
 
 
@@ -23,8 +22,9 @@
 
 /*размеры видео*/
 .video-pos-single {
-    width: 700px;
-    height: 430px;
+    width: 900px;
+    height: 480px;
+    margin-left: 70px;
     /*margin-bottom: -150px;*/
 }
 
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 
@@ -44,7 +44,7 @@
 
 /* Стили для активного слайда (левого!!) */
 .video-pos.active {
-    transform: scale(1.2);
+    transform: scale(1);
     z-index: 1;
     filter: brightness(1);
     margin-left: -75px;
@@ -55,7 +55,8 @@
 /* Стили для неактивного слайда */
 .video-pos:not(.active) {
     transform: scale(0.7);
-    margin-top: 50px;
+    padding-left: 70px;
+    margin-top: 5px;
     filter: brightness(0.4);
     transition: transform 0.6s ease, filter 0.6s ease;
 }
@@ -86,4 +87,16 @@
     border: 1px solid var(--Yellow);
     background: transparent;
     color: transparent;
+}
+
+.video-driver-name{
+    margin-top: 10px;
+    margin-left: 80px;
+    color: #FFF;
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 28px;
 }

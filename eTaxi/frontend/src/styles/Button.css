@@ -30,6 +30,9 @@
 .custom-next-button:hover ,
 .custom-prev-button:hover {
     background-color: white;
-    color: black;
+}
+.custom-prev-button img:hover,
+.custom-next-button img:hover{
+    filter: invert(1);
 }
 

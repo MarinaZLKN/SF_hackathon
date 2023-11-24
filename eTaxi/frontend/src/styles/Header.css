@@ -202,8 +202,8 @@
     position: fixed;
     top: 0;
     right: -840px;
-    width: 840px;
-    height: 1080px;
+    width: 700px;
+    height: 900px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -241,7 +241,7 @@
     filter: invert(100%);
 }
 .request-block{
-    width: 504px;
+    width: 100%;
     height: 1080px;
     text-align: left;
     font-family: var(--font-family);
@@ -250,63 +250,118 @@
     flex-direction: column;
 }
 .request-block_upper{
+    height: 350px;
+    width: 504px;
+    padding-left: 116px;
 
 }
-.request-block_down{}
-.input-container {
-  padding: 20px 0px;
+.request-block_down{
+    width: 100%;
+    padding-left: 116px;
+    height: 450px;
+    background: var(--BG-light);
+    display: flex;
+    flex-direction: row;
+}
+.request-header-form{
+
+    width: 504px;
 }
 
-.input-container input[type="text"],
-.input-container input[type="tel"],
-.input-container input[type="comment"]{
-  border: none;
-  background: transparent;
-  width: 100%;
-  border-bottom: 1px solid #949494;
-  padding: 10px 0;
-  font-size: 20px;
-  color: white;
+.request-input-header input {
+    width: 100%;
+    height: 40px;
 }
 
-.input-container label {
-  font-weight: bold;
-  color: #fff;
+.request-header-form input{
+    background: transparent;
+    border-bottom: 1px solid var(--Grey, #989898);
+    width: 496px;
 }
 
+.request-input-header{
+    margin-top: 30px;
+}
+
+
+.request-input-header label {
+    color: var(--Dark-gray, #606060);
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 28px;
+    }
+.request-input-header input::placeholder{
+    color: var(--Grey);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 32px;
+}
 .request-title{
     color:white;
+    font-family: var(--font-family);
     font-size: 36px;
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
-    padding-bottom: 25px;
+    text-transform: uppercase;
 }
 .title-color{
     color: var(--Yellow);
 }
 .request-subtitle{
+    margin-top: 12px;
     color: white;
+    font-family: var(--font-family);
     font-size: 24px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: 32px;
 }
+.request-title-another{
+    color:  #FFF;
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+    margin-top: 60px;
+    margin-bottom: 28px;
+}
 
+.request-bottom-part{
+
+
+
+}
 .request-checkbox{
-    padding-top: 20px;
+
+
 }
 .request-block_btn{
-    padding-top: 80px;
+    flex: 1;
+    padding-top: 30px;
     align-self: flex-end;
 }
 
 .checkbox-pad{
-    padding-left: 5px;
-    font-size: 16px;
+    color: var(--Dark-gray, #606060);
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 14px;
+    padding-right: 10px;
+
 }
 .request-block_video{
     padding-bottom: 42px;
+    margin-top: 50px;
 }
 #request-sent{
     margin-bottom: -20px;
@@ -325,7 +380,9 @@
     max-height: 400px;
 
 }
-
+.request-block_titles-sent{
+    padding-left: 116px;
+}
 .cities-list::before {
     content: "";
     position: absolute;
@@ -368,3 +425,144 @@
 .city-drop {
     cursor: pointer;
 }
+
+
+
+.yellow-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 528px;
+    height: 2px;
+    background: var(--Yellow);
+}
+
+.circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--Yellow, #FFCB00);
+
+}
+
+.request-underyellowbar-titles{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 528px;
+    margin-top: 16px;
+}
+
+.underyellow-title{
+    color: white;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+}
+
+
+
+
+
+/*.header .info-block.active {*/
+/*    right: 0;*/
+/*}*/
+
+/*.close-button {*/
+/*    position: absolute;*/
+/*    top: 40px;*/
+/*    left: 40px;*/
+/*    background: none;*/
+/*    cursor: pointer;*/
+/*    border-radius: 100px;*/
+/*    border: 1px solid white;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    transition: background-color 0.3s, color 0.3s;*/
+/*}*/
+
+/*.close-button:hover {*/
+/*    background-color: white;*/
+/*    color: black;*/
+/*}*/
+
+/*.close-button img {*/
+/*    transition: filter 0.3s;*/
+/*}*/
+
+/*.close-button:hover img {*/
+/*    filter: invert(100%);*/
+/*}*/
+/*.request-block{*/
+/*    width: 504px;*/
+/*    height: 1080px;*/
+/*    text-align: left;*/
+/*    font-family: var(--font-family);*/
+/*    padding-top: 100px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+/*.request-block_upper{*/
+
+/*}*/
+/*.request-block_down{}*/
+/*.input-container {*/
+/*  padding: 20px 0px;*/
+/*}*/
+
+/*.input-container input[type="text"],*/
+/*.input-container input[type="tel"],*/
+/*.input-container input[type="comment"]{*/
+/*  border: none;*/
+/*  background: transparent;*/
+/*  width: 100%;*/
+/*  border-bottom: 1px solid #949494;*/
+/*  padding: 10px 0;*/
+/*  font-size: 20px;*/
+/*  color: white;*/
+/*}*/
+
+/*.input-container label {*/
+/*  font-weight: bold;*/
+/*  color: #fff;*/
+/*}*/
+
+/*.request-title{*/
+/*    color:white;*/
+/*    font-size: 36px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: 48px;*/
+/*    padding-bottom: 25px;*/
+/*}*/
+/*.title-color{*/
+/*    color: var(--Yellow);*/
+/*}*/
+/*.request-subtitle{*/
+/*    color: white;*/
+/*    font-size: 24px;*/
+/*    font-style: normal;*/
+/*    font-weight: 400;*/
+/*    line-height: 32px;*/
+/*}*/
+
+/*.request-checkbox{*/
+/*    padding-top: 20px;*/
+/*}*/
+/*.request-block_btn{*/
+/*    padding-top: 80px;*/
+/*    align-self: flex-end;*/
+/*}*/
+
+/*.checkbox-pad{*/
+/*    padding-left: 5px;*/
+/*    font-size: 16px;*/
+/*}*/
+/*.request-block_video{*/
+/*    padding-bottom: 42px;*/
+/*}*/
+/*#request-sent{*/
+/*    margin-bottom: -20px;*/
+/*}*/
