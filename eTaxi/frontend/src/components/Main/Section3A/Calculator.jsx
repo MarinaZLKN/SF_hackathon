@@ -9,6 +9,7 @@ const Calculator = () => {
     const [value4, setValue4] = useState(1);
     const [earnings, setEarnings] = useState(0);
     const [profit, setProfit] = useState(0);
+    const [initialized, setInitialized] = useState(false);
 
 
     const handleChange1 = (event) => setValue1(event.target.value);
@@ -24,8 +25,13 @@ const Calculator = () => {
             return (value1 - value2 - value3) * value4;
         };
         setEarnings(calculateEarnings());
-        const profitValue = Math.round(((value2/300 * 200) * value4));
-        setProfit(profitValue);
+        if (!initialized) {
+            setProfit(0);
+            setInitialized(true);
+        } else {
+            const profitValue = Math.round(((value2 / 300 * 200) * value4));
+            setProfit(profitValue);
+        }
     }, [value1, value2, value3, value4]);
 
     //TODO сделать цвет трека восприимчивым к передвижению

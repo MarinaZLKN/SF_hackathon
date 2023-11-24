@@ -87,7 +87,7 @@ function Header ({cityInfo, scrollToSection}){
                 </div>
                 <div className="header-menu">
                     <label onClick={() => scrollToSection('advantages')}>Преимущества</label>
-                    <label>Автопарк</label>
+                    <label onClick={() => scrollToSection('autopark')}>Автопарк</label>
                     <label onClick={() => scrollToSection('calculator')}>Калькулятор</label>
                     <label onClick={() => scrollToSection('conditions')}>Условия</label>
                     <label>Контакты</label>
@@ -132,32 +132,68 @@ function Header ({cityInfo, scrollToSection}){
                               </div>
                             ) : (
                           <>
-                              <div className="request-block_upper">
-                                  <div className="request-block_titles">
-                                      <div className="request-title">Оставьте <label className="title-color">заявку</label></div>
-                                      <div className="request-subtitle">Первый день аренды бесплатно</div>
-                                  </div>
+                              <div className="request-wrapper">
+                                  <div className="request-block_upper">
+                                      <div className="request-block_titles">
+                                          <div className="request-title">Оставьте заявку</div>
+                                          <div className="request-subtitle">Первый день аренды бесплатно</div>
+                                          <div className="request-title-another">Требования к водителям</div>
+                                          <div className="yellow-bar">
+                                              <div className="circle left"></div>
+                                              <div className="circle center"></div>
+                                              <div className="circle right"></div>
+                                          </div>
+                                          <div className="request-underyellowbar-titles">
+                                              <p className="underyellow-title">Вам более <br/> 21 года</p>
+                                              <p className="underyellow-title">Опыт вождения <br/> более 3 лет</p>
+                                              <p className="underyellow-title">Категория <br/> прав "B"</p>
+                                          </div>
+                                      </div>
                               </div>
                               <div className="request-block_down">
-                                  <div className="input-container">
-                                    <input type="text" placeholder="Ваше имя" value={name} onChange={(e) => setName(e.target.value)} />
-                                </div>
-                                <div className="input-container">
-                                    <input type="tel" placeholder="Телефон" value={phone} onChange={(e) => setPhone(e.target.value)}/>
-                                </div>
-                                <div className="input-container">
-                                    <input type="comment" placeholder="Комментарий" value={comment} onChange={(e) => setComment(e.target.value)} />
-                                </div>
-                                <div className="request-checkbox">
-                                    <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
-                                    <label className="checkbox-pad">Я согласен с политикой конфиденциальности</label>
-                                </div>
-                                <div className="request-block_btn">
-                                    <button className="btn-header" onClick={handleSubmit}>
-                                        Оставить заявку
-                                    </button>
-                                </div>
+                                  <form className="request-header-form">
+                                      <div className="request-input-header">
+                                        <label htmlFor="name">Ваше имя</label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            placeholder="Иван"
+                                        />
+                                      </div>
+                                      <div className="request-input-header">
+                                            <label htmlFor="name">Телефон</label>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                            />
+                                      </div>
+                                      <div className="request-input-header">
+                                            <label htmlFor="name">Комментарий</label>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Что вас интересует?"
+                                            />
+                                      </div>
+                                      <div className="request-bottom-part">
+                                          <div className="request-checkbox">
+                                              <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
+                                              <label className="checkbox-pad">Я соглашаюсь с <b>политикой <br/>конфиденциальности</b></label>
+                                          </div>
+                                          <div className="request-block_btn">
+                                              <button className="btn-header" onClick={handleSubmit}>
+                                                  Оставить заявку
+                                              </button>
+                                          </div>
+                                      </div>
+                                  </form>
                               </div>
+
+                              </div>
+
 
                           </>
                         )}
@@ -170,3 +206,61 @@ function Header ({cityInfo, scrollToSection}){
 };
 
 export default Header;
+
+// <div className={`info-block ${infoBlockVisible ? 'active' : ''}`}>
+//                       <button className="close-button" onClick={toggleInfoBlock}>
+//                           <img src={close} alt="Закрыть" />
+//                       </button>
+//                       <div className="request-block">
+//                           {formSubmitted ? (
+//                               <div className="request-block_titles-sent">
+//                                   <div className="request-title">Ваша заявка <label className="title-color">принята</label></div>
+//                                   <div className="request-title" id="request-sent">Спасибо за обращение </div>
+//                                   <div className="request-block_video">
+//                                       <iframe
+//                                           width="495"
+//                                           height="280"
+//                                           src="https://www.youtube.com/embed/jfKfPfyJRdk?si=-grifyth9EDk5x8r"
+//                                           title="YouTube video player"
+//                                           frameBorder="0"
+//                                           allowFullScreen
+//                                       ></iframe>
+//                                   </div>
+//                                   <div className="request-block_subtitles-sent">
+//                                       <div className="request-subtitle">Наши менеджеры перезвонят</div>
+//                                       <div className="request-subtitle">Вам в ближайшие сутки!</div>
+//                                   </div>
+//                               </div>
+//                             ) : (
+//                           <>
+//                               <div className="request-block_upper">
+//                                   <div className="request-block_titles">
+//                                       <div className="request-title">Оставьте <label className="title-color">заявку</label></div>
+//                                       <div className="request-subtitle">Первый день аренды бесплатно</div>
+//                                   </div>
+//                               </div>
+//                               <div className="request-block_down">
+//                                   <div className="input-container">
+//                                     <input type="text" placeholder="Ваше имя" value={name} onChange={(e) => setName(e.target.value)} />
+//                                 </div>
+//                                 <div className="input-container">
+//                                     <input type="tel" placeholder="Телефон" value={phone} onChange={(e) => setPhone(e.target.value)}/>
+//                                 </div>
+//                                 <div className="input-container">
+//                                     <input type="comment" placeholder="Комментарий" value={comment} onChange={(e) => setComment(e.target.value)} />
+//                                 </div>
+//                                 <div className="request-checkbox">
+//                                     <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
+//                                     <label className="checkbox-pad">Я согласен с политикой конфиденциальности</label>
+//                                 </div>
+//                                 <div className="request-block_btn">
+//                                     <button className="btn-header" onClick={handleSubmit}>
+//                                         Оставить заявку
+//                                     </button>
+//                                 </div>
+//                               </div>
+//
+//                           </>
+//                         )}
+//                       </div>
+//                     </div>

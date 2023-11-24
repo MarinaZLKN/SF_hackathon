@@ -10,6 +10,7 @@ import {setCityInfo} from "../actions";
 import {useDispatch, useSelector} from "react-redux";
 import Section6 from "./Main/Section6/Section6.jsx";
 import Request from "./Main/Section6B/Request.jsx";
+import CarSlider from "./Main/Section3/CarSlider.jsx";
 
 
 function App() {
@@ -75,11 +76,14 @@ function App() {
         <Header cityInfo={cityInfo} scrollToSection={scrollToSection}  />
       </header>
       <main>
-        <div className="section-1">
+        <section className="section-1">
           <Hero />
-        </div>
-        <section id='advantages' className='section-2'>
+        </section>
+        <section id="advantages" className='section-2'>
           <Advantages />
+        </section>
+        <section id="autopark" className="section-3">
+          <CarSlider/>
         </section>
         <section id="calculator" className="section-3A">
           <Calculator scrollToSection={scrollToSection}/>
