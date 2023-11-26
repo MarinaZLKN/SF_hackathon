@@ -6,7 +6,7 @@ import RentAll from "./Main/Section4/RentAll.jsx";
 import RentHow from "./Main/Section4/RentHow.jsx";
 import Calculator from "./Main/Section3A/Calculator.jsx";
 import VideoSlider from "./Main/Section5/VideoSlider.jsx";
-import {setCityInfo} from "../actions";
+import {setCityInfo, setVideos, setCarInfo} from "../actions";
 import {useDispatch, useSelector} from "react-redux";
 import Section6 from "./Main/Section6/Section6.jsx";
 import Request from "./Main/Section6B/Request.jsx";
@@ -15,11 +15,14 @@ import CarSlider from "./Main/Section3/CarSlider.jsx";
 
 function App() {
   const cityInfo = useSelector((state) => state.cityInfo);
+  const videos = useSelector((state) => state.videos);
+  const carInfo = useSelector((state) => state.carInfo);
   const dispatch = useDispatch();
 
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [videos, setVideos] = useState([]);
+
+  // const [videos, setVideos] = useState([]);
 
   function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -52,9 +55,15 @@ function App() {
             dispatch(setCityInfo(data));
             //setCityInfo(data);
             if (data.feedback) {
-              const videoLinks = data.feedback.map(feedback => feedback.url_video);
-              setVideos(videoLinks);
-              console.log('Ссылки на видео:', videoLinks);
+              const videos = data.feedback.map(feedback => ({
+              name: feedback.name,
+              url_video: feedback.url_video,
+            }));
+            dispatch(setVideos(videos));
+            console.log('Видео данные:', videos);
+            }
+            if (data.cars) {
+              dispatch(setCarInfo(data.cars));
             }
           } else {
             console.error('Ошибка при получении данных с сервера');
@@ -83,7 +92,7 @@ function App() {
           <Advantages />
         </section>
         <section id="autopark" className="section-3">
-          <CarSlider/>
+          <CarSlider carInfo={carInfo}/>
         </section>
         <section id="calculator" className="section-3A">
           <Calculator scrollToSection={scrollToSection}/>
@@ -93,7 +102,7 @@ function App() {
           <RentHow />
         </section>
         <section className="section-5">
-            <VideoSlider/>
+            <VideoSlider videos={videos} city={cityInfo}/>
         </section >
         <section className="section-6">
           <Section6 />

@@ -130,7 +130,7 @@
     margin-left: 10px;
     padding-right: 10px;
 }
-.car-btn{
+.car-btn-slider{
     display: flex;
     align-items: flex-end;
 }
@@ -138,9 +138,15 @@
 .car-slider-btn{
     margin-bottom: 40px;
     gap: 10px;
+    background: transparent;
     border: 1px solid var(--Dark-gray, #606060);
     width: 170px;
     height: 60px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
 }
 
 .car-slider-btn:hover{

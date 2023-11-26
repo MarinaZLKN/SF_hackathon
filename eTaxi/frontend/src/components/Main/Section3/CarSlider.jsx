@@ -1,20 +1,12 @@
 import React, {useState} from 'react';
 import '../../../styles/CarSlider.css';
-import Subtitle from "../../Subtitle.jsx";
 import Slider from "react-slick";
-import image1 from '../../../images/image1.jpg';
-import image2 from '../../../images/image2.jpg';
-import image3 from '../../../images/image3.jpg';
-import image4 from '../../../images/image4.jpg';
 
-function CarSlider () {
-    const [slideIndex, setSlideIndex] = useState(0);
-    const images = [
-          image1,
-          image2,
-          image3,
-          image4
-          ];
+
+//TODO добавить кнопки для слайдера
+function CarSlider ({carInfo}) {
+
+  const [slideIndex, setSlideIndex] = useState(0);
 
 
   const settings = {
@@ -54,39 +46,39 @@ function CarSlider () {
             </div>
           <div className="slider_wrapper">
             <Slider {...settings}>
-              {images.map((img, index) => (
+              {carInfo.cars && carInfo.cars.map((car, index) => (
                 <div
                   className={index === slideIndex ? "slide active" : "slide"}
                   key={index}
                 >
                   <div className="slider-1">
-                    <img src={img} alt="" />
+                    <img  src={`http://127.0.0.1:8000${car.image}`} alt={car.model} />
                       <div className="slide_text_car-name">
-                            <div className="car-name">Volkswaden Polo</div>
+                            <div className="car-name">{car.model}</div>
                         </div>
 
                         <div className={index === slideIndex ? "slide_text_wrapper active" : "slide_text_wrapper"}>
                             <div className="block-container">
                                 <div className="value-container">
                                     <div className="prop_name">Цена за сутки</div>
-                                    <div className="prop-value">3000 р</div>
+                                    <div className="prop-value">{car.rental_price.toString()} ₽</div>
                                 </div>
                                 <div className="separator"></div>
                             </div>
                             <div className="block-container">
                                 <div className="value-container">
                                     <div className="prop_name">Коробка передач</div>
-                                    <div className="prop-value">АКПП</div>
+                                    <div className="prop-value">{car.transmission}</div>
                                 </div>
                                 <div className="separator"></div>
                             </div>
                           <div className="block-container">
                                 <div className="value-container">
                                     <div className="prop_name">Вид топлива</div>
-                                    <div className="prop-value">Газ</div>
+                                    <div className="prop-value">{car.fuel_type}</div>
                                 </div>
                             </div>
-                            <div className="car-btn">
+                            <div className="car-btn-slider">
                                 <button className="car-slider-btn">Подробнее</button>
                             </div>
                         </div>
