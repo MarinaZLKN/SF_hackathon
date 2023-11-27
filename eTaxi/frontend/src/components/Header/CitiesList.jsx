@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/Header.css';
 import {useDispatch} from "react-redux";
-import {setCityInfo} from "../../actions";
+import {setCarInfo, setCityInfo, setVideos} from "../../actions";
 
 function CitiesList({handleCitySelect}) {
     const [cities, setCities] = useState([]);
@@ -10,6 +10,21 @@ function CitiesList({handleCitySelect}) {
       const handleCityClick = (city) => {
           console.log('Selected city:', city);
           dispatch(setCityInfo(city));
+          const cityData = city.city;
+
+          if (cityData && cityData.feedback) {
+            const videosData = cityData.feedback.map(feedback => ({
+              name: feedback.name,
+              url_video: feedback.url_video,
+            }));
+            dispatch(setVideos(videosData));
+          }
+
+          if (cityData && cityData.cars) {
+            const photosData = cityData.cars
+            dispatch(setCarInfo(photosData));
+          }
+
           handleCitySelect();
       };
 
@@ -19,6 +34,7 @@ function CitiesList({handleCitySelect}) {
             const response = await fetch('http://127.0.0.1:8000/api/v1/cities/');
             if (response.ok) {
                 const data = await response.json();
+                console.log('data in CitiesList: ', data)
                 setCities(data);
             } else {
               console.error('Ошибка при получении данных с сервера');

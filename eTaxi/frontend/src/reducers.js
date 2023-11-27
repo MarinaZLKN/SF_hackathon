@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+
 const cityInfoReducer = (state = null, action) => {
   switch (action.type) {
     case 'SET_CITY_INFO':

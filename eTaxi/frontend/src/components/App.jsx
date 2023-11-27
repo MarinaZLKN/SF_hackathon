@@ -22,14 +22,12 @@ function App() {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
 
-  // const [videos, setVideos] = useState([]);
-
   function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+  };
 
 
   useEffect(() => {
@@ -53,7 +51,7 @@ function App() {
             const data = await response.json();
             console.log('Data', data)
             dispatch(setCityInfo(data));
-            //setCityInfo(data);
+
             if (data.feedback) {
               const videos = data.feedback.map(feedback => ({
               name: feedback.name,
