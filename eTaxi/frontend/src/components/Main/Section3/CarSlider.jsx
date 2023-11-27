@@ -75,7 +75,7 @@ function CarSlider ({carInfo}) {
                           <div className="block-container">
                                 <div className="value-container">
                                     <div className="prop_name">Вид топлива</div>
-                                    <div className="prop-value">{car.fuel_type}</div>
+                                    <div className="prop-value">{car.fuel}</div>
                                 </div>
                             </div>
                             <div className="car-btn-slider">

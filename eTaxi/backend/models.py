@@ -38,6 +38,7 @@ class Car(models.Model):
     city = models.ForeignKey(City, related_name='cars', on_delete=models.CASCADE)
     image = models.FileField(upload_to='images', null=True, blank=True)
     model = models.CharField(max_length=128)
+
     AUTOMATIC_TRANSMISSION = 'АКПП'
     MANUAL_TRANSMISSION = 'МКПП'
     transmission_choises = (
@@ -46,7 +47,18 @@ class Car(models.Model):
     )
     transmission = models.CharField(max_length=4,choices=transmission_choises, default=AUTOMATIC_TRANSMISSION)
     engine_capacity = models.DecimalField(max_digits=2, decimal_places=1)
-    fuel_type = models.CharField(max_length=255)
+
+    GAS = 'Газ'
+    GASOLINE = 'Бензин'
+    DIESEL_FUEL = 'Дизель'
+    fuel_choices = (
+        (GAS, 'ГАЗ'),
+        (GASOLINE, 'БЕНЗИН'),
+        (DIESEL_FUEL, 'ДИЗЕЛЬ')
+    )
+    fuel = models.CharField(max_length=6, choices=fuel_choices, default=GAS)
+
+    # fuel_type = models.CharField(max_length=255)
     rental_price = models.IntegerField()
     ECONOM_CLASS = 'Эконом'
     BUSINESS_CLASS = 'Бизнес'

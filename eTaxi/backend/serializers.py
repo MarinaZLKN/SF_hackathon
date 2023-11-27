@@ -10,7 +10,7 @@ class OfficeSerializer(serializers.ModelSerializer):
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ('taxi_class', 'model', 'transmission', 'engine_capacity', 'fuel_type', 'rental_price', 'image')
+        fields = ('taxi_class', 'model', 'transmission', 'engine_capacity', 'fuel', 'rental_price', 'image')
 
 
 class FeedbackSerializer(serializers.ModelSerializer):
