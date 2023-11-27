@@ -52,7 +52,14 @@ function CarSlider ({carInfo}) {
                   key={index}
                 >
                   <div className="slider-1">
-                    <img  src={`http://127.0.0.1:8000${car.image}`} alt={car.model} />
+                    <img
+                          src={
+                            car.image.startsWith("http://")
+                              ? car.image
+                              : `http://127.0.0.1:8000${car.image}`
+                          }
+                          alt={car.model}
+                        />
                       <div className="slide_text_car-name">
                             <div className="car-name">{car.model}</div>
                         </div>
@@ -95,3 +102,5 @@ function CarSlider ({carInfo}) {
 };
 
 export default CarSlider;
+
+//|| car.image.startsWith("https://")

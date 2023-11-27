@@ -9,7 +9,7 @@ import close from '../../images/close_FILL1_wght200_GRAD0_opsz24 2.png';
 import CitiesList from "./CitiesList.jsx";
 
 
-function Header ({cityInfo, scrollToSection}){
+function Header ({cityInfo, scrollToSection }){
     const [infoBlockVisible, setInfoBlockVisible] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [name, setName] = useState('');
@@ -17,17 +17,17 @@ function Header ({cityInfo, scrollToSection}){
     const [comment, setComment] = useState('');
     const [agreed, setAgreed] = useState(false);
 
-
-
     const [showDropdown, setShowDropdown] = useState(false);
     const [showCitiesList, setShowCitiesList] = useState(false);
 
     const handleCityClick = () => {
         setShowDropdown(true);
     };
+
     const handleCitySelect = () => {
         setShowDropdown(false);
         setShowCitiesList(false);
+
     };
 
     const handleYesClick = () => {
