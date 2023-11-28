@@ -11,6 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Section6 from "./Main/Section6/Section6.jsx";
 import Request from "./Main/Section6B/Request.jsx";
 import CarSlider from "./Main/Section3/CarSlider.jsx";
+import Geography from './Main/Geography/Geography.jsx';
 
 
 function App() {
@@ -107,6 +108,9 @@ function App() {
         </section>
         <section className="section-6B">
             <Request/>
+        </section>
+        <section className="Geography">
+          <Geography />
         </section>
       </main>
       <footer>

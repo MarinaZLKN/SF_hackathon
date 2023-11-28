@@ -1,0 +1,177 @@
+.line-icon-ekb {
+    position: absolute;
+    top: 46%;
+    left: -4%;
+    transform: rotate(10deg);
+}
+
+.line-icon-tum {
+    position: absolute;
+    top: 45%;
+    left: -4%;
+    transform: rotate(8deg);
+}
+
+.line-icon-omsk {
+    position: absolute;
+    top: 50%;
+    left: -4%;
+    transform: rotate(10deg);
+}
+
+.geography-container {
+    background-color: #222222;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 132px;
+}
+
+.geography-title {
+    color: white;
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 76px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+.geo-list_item {
+    margin-bottom: 52px;
+}
+
+.number {
+    color: white;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+
+.text {
+    color: #cbccce;
+    font-size: 24px;
+    line-height: 32px;
+    text-decoration-line: overline;
+}
+
+.map {
+    display: flex;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+/* .map_img {
+    position: relative;
+} */
+
+.cart {
+    position: relative;
+}
+
+
+/* .line {
+    position: absolute;
+    width: 2px;
+    background-color: var(--Yellow);
+
+}  */
+
+.center {
+    position: absolute;
+    top: 0;
+    left: -400px;
+    border: 1px solid #cbccce;
+    color: white;
+    width: 372px;
+    height: 350px;
+    margin-top: 250px;
+}
+
+.center-info {
+    padding: 40px;
+}
+
+.city-info_title {
+    color: var(--Yellow, #FFCB00);
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 48px;
+    margin-bottom: 32px;
+}
+.city-info_text {
+    color: var(--Grey, #989898);
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.city-info_subtext {
+    color: var(--White, #fff);
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 28px;
+}
+
+.icon-ekb {
+    position: absolute;
+    left: 100px;
+    top: 365px;
+}
+
+
+.icon-tum {
+    position: absolute;
+    left: 168px;
+    top: 352px;
+}
+
+.icon-omsk {
+    position: absolute;
+    left: 256px;
+    top: 408px;
+}
+
+.icon-nsk {
+    position: absolute;
+    left: 356px;
+    top: 405px;
+}
+
+.icon-tomsk {
+    position: absolute;
+    left: 406px;
+    top: 378px;
+}
+
+.icon-barn {
+    position: absolute;
+    left: 380px;
+    top: 448px;
+}
+
+.icon-kem {
+    position: absolute;
+    left: 420px;
+    top: 428px;
+}
+
+.icon-nvk {
+    position: absolute;
+    left: 464px;
+    top: 454px;
+}
+
+.icon-kras {
+    position: absolute;
+    left: 454px;
+    top: 402px;
+}
