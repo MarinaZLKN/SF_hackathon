@@ -7,6 +7,12 @@
     top: 0;
     color: white;
     z-index: 1000;
+    transition: backdrop-filter 0.3s ease;
+}
+
+.info-block-open{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 1500px;
 }
 
 .header-container{
@@ -189,7 +195,7 @@
 
 .btn-header:hover {
     background-color: white;
-    color: #000;
+    color: black;
 }
 .logo{
     width: 60px;
@@ -202,8 +208,8 @@
     position: fixed;
     top: 0;
     right: -840px;
-    width: 700px;
-    height: 900px;
+    width: 840px;
+    height: 1080px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -251,21 +257,21 @@
     flex-direction: column;
 }
 .request-block_upper{
-    height: 350px;
+    height: 400px;
     width: 504px;
-    padding-left: 116px;
+    padding-left: 156px;
 
 }
 .request-block_down{
     width: 100%;
-    padding-left: 116px;
-    height: 450px;
+    padding-left: 156px;
+    height: 620px;
     background: var(--BG-light);
     display: flex;
     flex-direction: row;
 }
 .request-header-form{
-
+    margin-top: 30px;
     width: 504px;
 }
 
@@ -289,9 +295,9 @@
     color: var(--Dark-gray, #606060);
     text-align: center;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 28px;
     }
 .request-input-header input::placeholder{
@@ -305,23 +311,35 @@
 .request-title{
     color:white;
     font-family: var(--font-family);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+#request-sent{
     font-size: 36px;
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
     text-transform: uppercase;
+    margin-top: 12px;
+}
+
+.request-block_subtitles-sent{
+    padding-top: 40px;
+
 }
 .title-color{
     color: var(--Yellow);
 }
 .request-subtitle{
-    margin-top: 12px;
     color: white;
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 200;
     line-height: 32px;
+    color: #CBCCCE;
 }
 .request-title-another{
     color:  #FFF;
@@ -336,19 +354,30 @@
 }
 
 .request-bottom-part{
+    padding-top: 76px;
+    display: flex;
+    flex-direction: column;
 
 
 
 }
 .request-checkbox{
-
+    width: 180px;
+    display: flex;
+    align-items: center;
+}
+.request-checkbox-input{
+    border: 2px solid var(--Black, #141414);
+    width: 28px;
+    height: 28px;
 
 }
 .request-block_btn{
     flex: 1;
-    padding-top: 30px;
     align-self: flex-end;
+    cursor: pointer;
 }
+
 
 .checkbox-pad{
     color: var(--Dark-gray, #606060);
@@ -358,7 +387,22 @@
     font-weight: 200;
     line-height: 14px;
     padding-right: 10px;
-
+    height: 20px;
+}
+.btn-header_down{
+    background: var(--Yellow, #FFCB00);
+    width: 223px;
+    height: 60px;
+    color: var(--Black, #141414);
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+}
+.btn-header_down:hover{
+    background: black;
+    color: white;
 }
 .request-block_video{
     padding-bottom: 42px;
@@ -383,6 +427,7 @@
 }
 .request-block_titles-sent{
     padding-left: 116px;
+
 }
 .cities-list::before {
     content: "";
