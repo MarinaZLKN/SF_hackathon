@@ -98,4 +98,4 @@ class FeedbackViewSet(viewsets.ModelViewSet):
 class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
-    lookup_field = 'slug'
+    # lookup_field = 'slug'
