@@ -12,13 +12,11 @@ import CitiesList from "./CitiesList.jsx";
 function Header({cityInfo, scrollToSection}) {
     const [infoBlockVisible, setInfoBlockVisible] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
-    // const [name, setName] = useState('');
-    // const [phone, setPhone] = useState('');
-    // const [comment, setComment] = useState('');
-    // const [agreed, setAgreed] = useState(false);
 
     const [showDropdown, setShowDropdown] = useState(false);
     const [showCitiesList, setShowCitiesList] = useState(false);
+
+
 
     const handleCityClick = () => {
         setShowDropdown(true);
@@ -43,14 +41,6 @@ function Header({cityInfo, scrollToSection}) {
         setInfoBlockVisible(!infoBlockVisible);
     };
 
-    // const handleSubmit = () => {
-    //     // данные на бэк отправлять буду здесь
-    //     setName('');
-    //     setPhone('');
-    //     setComment('');
-    //     setAgreed(false);
-    //     setFormSubmitted(true);
-    // };
 
     const [formData, setFormData] = useState({
         name: "",
@@ -139,7 +129,8 @@ function Header({cityInfo, scrollToSection}) {
                     <div className="header-phone_number">
                         <img className="header_phone-icon" src={icon}/>
                         {cityInfo ? (
-                            <p className="header-phone_number">{cityInfo.city.phone_number}</p>
+                            <p className="header-phone_number">
+                                <a className="phone-to-call" href={`tel:${cityInfo.city.phone_number}`}>{cityInfo.city.phone_number}</a></p>
                         ) : (
                             <p className="header-phone_number">Загрузка...</p>
                         )}
@@ -184,7 +175,7 @@ function Header({cityInfo, scrollToSection}) {
                                                 <div className="request-title-another">Требования к водителям</div>
                                                 <div className="yellow-bar">
                                                     <div className="circle left"></div>
-                                                    <div className="circle center"></div>
+                                                    <div className="circle center-1"></div>
                                                     <div className="circle right"></div>
                                                 </div>
                                                 <div className="request-underyellowbar-titles">

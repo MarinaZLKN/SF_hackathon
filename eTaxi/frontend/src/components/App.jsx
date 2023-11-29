@@ -12,6 +12,7 @@ import Section6 from "./Main/Section6/Section6.jsx";
 import Request from "./Main/Section6B/Request.jsx";
 import CarSlider from "./Main/Section3/CarSlider.jsx";
 import Geography from './Main/Geography/Geography.jsx';
+import Footer from "./Footer/Footer.jsx";
 
 
 function App() {
@@ -113,8 +114,8 @@ function App() {
           <Geography />
         </section>
       </main>
-      <footer>
-        <h2> Footer</h2>
+      <footer className="section-8">
+        <Footer/>
 
       </footer>
     </div>

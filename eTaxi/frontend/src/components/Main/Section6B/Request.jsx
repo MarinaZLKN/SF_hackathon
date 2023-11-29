@@ -81,6 +81,7 @@ function Request () {
                               <label htmlFor="comment">Комментарий</label>
                               <input
                                 id="comment"
+                                type="comment"
                                 name="comment"
                                 placeholder="Что вас интересует?"
                                 value={formData.comment}
