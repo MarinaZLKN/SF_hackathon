@@ -18,7 +18,8 @@ const Geography = () => {
             <circle cx="20" cy="20" r="4" fill="#FFCB00"/>
         </svg>
     );
-    
+    const [currentCity, setCurrentCity] = useState(0);
+    const [cityInfo, setCityInfo] = useState(null);
     const [width, setWidth] = useState(null);
     const divRef = useRef([])
     const buttonRef = useRef([])
@@ -30,6 +31,25 @@ const Geography = () => {
     ])
 
     const [activeButton, setActiveButton] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/v1/cities');
+                if (!response.ok) {
+                    throw new Error('Error')
+                }
+
+                const result = await response.json();
+                console.log(result)
+                setCityInfo(result);
+                setCurrentCity(result[0])
+            } catch (error) {
+                console.error(error)
+            }
+        };
+        fetchData();
+    }, []);
 
 
     useEffect(() => {
@@ -54,7 +74,10 @@ const Geography = () => {
         );
 
         setActiveButton(id);
-
+        const selectedCity = cityInfo.find((city) => city.id === id)
+        if (selectedCity) {
+            setCurrentCity(selectedCity);
+        }
 }
 
     return (
@@ -105,13 +128,14 @@ const Geography = () => {
                                     </div>)}
                                     {button.active && (
                                         <div ref={(ref) => (divRef.current[index] = ref)} className='center'>
-                                            <div className='center-info'>
-                                                <h4 className='city-info_title'>Tomsk</h4>
-                                                <p className='city-info_text'>Телефон</p>
-                                                <p className='city-info_subtext'>+7 343 995747</p>
-                                                <p className='city-info_text'>Часы работы</p>
-                                                <p className='city-info_subtext'>ПН-ЧТ 9:00 - 18:00</p>
-                                            </div>
+                                                <div className='center-info'>
+                                                    
+                                                    <h4 className='city-info_title'>{currentCity.city}</h4>                                                                                     
+                                                    <p className='city-info_text'>Телефон</p>
+                                                    <p className='city-info_subtext'>+7 343 995747</p>
+                                                    <p className='city-info_text'>Часы работы</p>
+                                                    <p className='city-info_subtext'>ПН-ЧТ 9:00 - 18:00</p>
+                                                </div>       
                                         </div>
                                     )}
                                 </div>
