@@ -1,20 +1,20 @@
 .footer-container{
-
+    overflow: hidden;
     height: 100%;
 }
 
 .footer-content{
     padding-top: 180px;
-
-
+    position: relative;
 }
 
 
 .footer-info-block{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    gap: 160px;
+}
+.footer-official a{
+    position: relative;
 }
 .footer-official label{
     display: block;
@@ -37,9 +37,27 @@
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
+    position: relative;
+}
+
+
+.footer-official a::before {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--Grey);
+    transition: width 0.3s;
+}
+
+.footer-official a:hover::before {
+  width: 160px;
 }
 .footer-offices{
     display: block;
+    width: 490px;
 
 }
 .footer-offices-addresses {
@@ -63,13 +81,17 @@
     padding-bottom: 20px;
 }
 .footer-logo{
+    width: 1560px;
+    height: 432px;
     color: #FFCB00;
     font-family: var(--font-family);
     font-size: 360px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 432px;
     padding-left: 90px;
+    position: relative;
+    top: 105px
 
 }
 

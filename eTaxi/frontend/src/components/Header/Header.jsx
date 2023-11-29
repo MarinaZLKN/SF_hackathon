@@ -123,7 +123,7 @@ function Header({cityInfo, scrollToSection}) {
                     <label onClick={() => scrollToSection('autopark')}>Автопарк</label>
                     <label onClick={() => scrollToSection('calculator')}>Калькулятор</label>
                     <label onClick={() => scrollToSection('conditions')}>Условия</label>
-                    <label>Контакты</label>
+                    <label onClick={() => scrollToSection('contacts')}>Контакты</label>
                 </div>
                 <div className="header-right">
                     <div className="header-phone_number">

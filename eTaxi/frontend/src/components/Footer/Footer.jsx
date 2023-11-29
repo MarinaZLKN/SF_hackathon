@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/Footer.css';
 
 
-function Footer (){
+function Footer ({cityInfo}){
 
     return(
         <div className="container footer-container">
@@ -10,19 +10,16 @@ function Footer (){
                 <div className="footer-info-block">
                     <div className="footer-official">
                         <label className="f-i-1">Официальный партнер <br/>Яндекс.Такси</label>
-                        <a href="https://etaxi124.ru/politikakompanii" className="f-i-2">Политика компании</a>
+                        <a href="https://etaxi124.ru/politikakompanii" className="f-i-2"><p className="company_pol">Политика компании</p></a>
                     </div>
                     <div className="footer-offices">
-                        <label className="f-i-1">Офисы таксопарка в Томске:</label>
+                        <label className="f-i-1">Офисы таксопарка в городе {cityInfo ? cityInfo.city.city : "Загрузка..."}:</label>
                         <div className="footer-offices-addresses">
-                            <p> Адресс</p>
-                            <p> Адресс</p>
-                            <p> Адресс</p>
-                            <p> Адресс</p>
-                            <p> Адресс</p>
-                            <p> Адресс</p>
-                        </div>
-
+                            {cityInfo &&
+                                cityInfo.city.offices.map((address, index) => (
+                                  <p key={index}>{address}</p>
+                                ))}
+                                        </div>
                     </div>
                     <div className="footer-updates">
                         <label className="f-i-1">Следите за нашими новостями:</label>

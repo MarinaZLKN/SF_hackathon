@@ -110,12 +110,12 @@ function App() {
         <section className="section-6B">
             <Request/>
         </section>
-        <section className="Geography">
+        <section id="contacts" className="Geography">
           <Geography />
         </section>
       </main>
       <footer className="section-8">
-        <Footer/>
+        <Footer cityInfo={cityInfo}/>
 
       </footer>
     </div>

@@ -1,9 +1,21 @@
 import React, {useState} from 'react';
 import '../../../styles/CarSlider.css';
 import Slider from "react-slick";
+import arrow from '../../../images/arrow-left.svg';
+
+const SamplePrevArrow = ({ onClick }) => (
+  <button className="custom-prev-button-car" onClick={onClick}>
+    <img src={arrow} alt="arrow"/>
+  </button>
+);
+
+const SampleNextArrow = ({ onClick }) => (
+  <button className="custom-next-button-car" onClick={onClick}>
+     <img src={arrow} alt="arrow"/>
+  </button>
+);
 
 
-//TODO добавить кнопки для слайдера
 function CarSlider ({carInfo}) {
 
   const [slideIndex, setSlideIndex] = useState(0);
@@ -15,14 +27,12 @@ function CarSlider ({carInfo}) {
       speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
-      // autoplay: true,
-      // autoplaySpeed: 5000,
       centerPadding: '10px',
       variableWidth: true,
       beforeChange: (_, next) => setSlideIndex(next),
       centerMode: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />,
 
     responsive: [
       {
@@ -43,6 +53,11 @@ function CarSlider ({carInfo}) {
         <div className="car-slider_content">
             <div className="container car-slider-title">
                 <p>Автомобили <br/> нашего автопарка</p>
+            </div>
+            <div className="car-slider-tafif">
+                <label>Эконом</label>
+                <label>Комфорт</label>
+                <label>Бизнесс</label>
             </div>
           <div className="slider_wrapper">
             <Slider {...settings}>
