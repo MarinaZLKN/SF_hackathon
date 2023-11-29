@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../../styles/Hero.css';
 import '../../../styles/App.css';
-import car from '../../../images/image 71.png';
+import car from '../../../images/auto-ya 1.png';
 import icon1 from '../../../images/Ellipse 2.png';
 
 
@@ -15,6 +15,7 @@ function Hero () {
                 </div>
                 <div className="hero-picture">
                     <img className="car-picture" src={car} />
+                    <div className="light-glow"></div>
                 </div>
                 <div className="hero-info">
                     <p>Забаратывайте от 3 000 ₽/день</p>

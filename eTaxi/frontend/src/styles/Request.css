@@ -54,7 +54,13 @@
     width: 100%;
     height: 40px;
 }
-
+.request-input input[type="text"],
+.request-input input[type="tel"],
+.request-input input[type="comment"]{
+    font-size: 22px;
+    outline: none;
+    color: var(--Dark-gray)
+}
 .request-form input{
     background: transparent;
     border-bottom: 1px solid var(--Grey, #989898);
