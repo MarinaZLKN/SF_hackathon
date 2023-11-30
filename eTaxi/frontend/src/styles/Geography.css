@@ -19,6 +19,13 @@
     transform: rotate(10deg);
 }
 
+.line-icon-nsk {
+    position: absolute;
+    top: 48%;
+    left: -4%;
+    transform: rotate(10deg)
+}
+
 .geography-container {
     background-color: #222222;
     display: flex;

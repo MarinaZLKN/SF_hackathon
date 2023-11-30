@@ -37,7 +37,8 @@ const Geography = ({cityInfo}) => {
     const Icons = [
         {id: 1, className: 'icon-ekb', icon: Icon,  active: false},
         {id: 2, className: 'icon-tum', icon: Icon, active: false},
-        {id: 3, className: 'icon-omsk', icon: Icon, active: false}
+        {id: 3, className: 'icon-omsk', icon: Icon, active: false},
+        {id: 4, className: 'icon-nsk', icon: Icon, active: false}
     ]
 
     const [buttons, setButtons] = useState(
