@@ -4,7 +4,14 @@ import '../../../styles/App.css';
 import map from '../../../images/map-geography.png'
 
 
-const Geography = () => {
+const Geography = ({cityInfo}) => {
+    console.log(cityInfo)
+    if (!cityInfo || !cityInfo.city) {
+        return null;
+    }
+    const selectedCity = cityInfo.city && cityInfo.city.id
+    console.log('ID', selectedCity)
+
     const Icon = (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#CBCCCE"/>
@@ -18,19 +25,30 @@ const Geography = () => {
             <circle cx="20" cy="20" r="4" fill="#FFCB00"/>
         </svg>
     );
+    
+    
+
     const [currentCity, setCurrentCity] = useState(0);
-    const [cityInfo, setCityInfo] = useState(null);
+    const [cityInfo1, setCityInfo1] = useState(null);
     const [width, setWidth] = useState(null);
     const divRef = useRef([])
     const buttonRef = useRef([])
 
-    const [buttons, setButtons] = useState([
+    const Icons = [
         {id: 1, className: 'icon-ekb', icon: Icon,  active: false},
         {id: 2, className: 'icon-tum', icon: Icon, active: false},
         {id: 3, className: 'icon-omsk', icon: Icon, active: false}
-    ])
+    ]
 
-    const [activeButton, setActiveButton] = useState(null);
+    const [buttons, setButtons] = useState(
+        Icons.map(but => ({
+        ...but,
+        active: but.id === selectedCity ? true : but.active
+    })));
+
+
+
+    const [activeButton, setActiveButton] = useState(selectedCity);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,8 +59,8 @@ const Geography = () => {
                 }
 
                 const result = await response.json();
-                console.log(result)
-                setCityInfo(result);
+                console.log('res', result)
+                setCityInfo1(result);
                 setCurrentCity(result[0])
             } catch (error) {
                 console.error(error)
@@ -72,10 +90,11 @@ const Geography = () => {
                     : { ...button, active: false }
             )
         );
-
+        console.log(id)
         setActiveButton(id);
-        const selectedCity = cityInfo.find((city) => city.id === id)
+        const selectedCity = cityInfo1.find((city) => city.id === id)
         if (selectedCity) {
+            console.log(selectedCity)
             setCurrentCity(selectedCity);
         }
 }
@@ -132,7 +151,7 @@ const Geography = () => {
                                                     
                                                     <h4 className='city-info_title'>{currentCity.city}</h4>                                                                                     
                                                     <p className='city-info_text'>Телефон</p>
-                                                    <p className='city-info_subtext'>+7 343 995747</p>
+                                                    <p className='city-info_subtext'>{currentCity.phone_number}</p>
                                                     <p className='city-info_text'>Часы работы</p>
                                                     <p className='city-info_subtext'>ПН-ЧТ 9:00 - 18:00</p>
                                                 </div>       

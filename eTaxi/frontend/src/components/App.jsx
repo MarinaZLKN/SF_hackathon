@@ -111,7 +111,7 @@ function App() {
             <Request/>
         </section>
         <section id="contacts" className="Geography">
-          <Geography />
+          <Geography cityInfo={cityInfo}/>
         </section>
       </main>
       <footer className="section-8">
