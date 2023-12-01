@@ -2,44 +2,49 @@ import React, { useEffect } from 'react';
 import Subtitle from '../../Subtitle.jsx';
 import '../../../styles/OurTeam.css'
 
-function OurTeam() {
-    let employees = [
-        {
-            image: "./photo/photo01.jpg",
-            name: "Владислав Брюховских",
-            position: "Операционный директор сети Ё-такси",
-            quote: "Мы - современный, иновационный таксопарк! Наша задача - создать для водителя комфортные условия для стабильного заработка! Мы ждём тебя в нашей команде, коллега!"
-        },
-        {
-            image: "./photo/photo02.jpg",
-            name: "Дмитрий Анушин",
-            position: "Директор филиала Ё-такси в Улан-Удэ",
-            quote: "Мы постоянно учимся и развиваемся, чтобы качественно предоставлять вам наши услуги!"
-        },
-        {
-            image: "./photo/photo03.jpg",
-            name: "Сергей Дунбинский",
-            position: "Директор Краснояского филиала Ё-такси",
-            quote: "Рынок такси активно развивается и мы развиваемся вместе с ним, ставя перед собой амбициозные цели"
-        },
-        {
-            image: "./photo/photo04.jpg",
-            name: "Вячеслав Виноградов",
-            position: "Директор Новокузнецкого филиала Ё-такси",
-            quote: "С нами Вы сможете получать достойный доход и реализовывать свои планы"
-        },
-        {
-            image: "./photo/photo05.jpg",
-            name: "Кочанова Мария",
-            position: "Разработчик цветной",
-            quote: "Некоторый текст"
-        },
-    ];
+function OurTeam({employeeInfo}) {
+    console.log('employeeInfo :', employeeInfo)
+    const employees = employeeInfo;
+    // let employees = [
+    //     {
+    //         image: "./photo/photo01.jpg",
+    //         name: "Владислав Брюховских",
+    //         position: "Операционный директор сети Ё-такси",
+    //         quote: "Мы - современный, иновационный таксопарк! Наша задача - создать для водителя комфортные условия для стабильного заработка! Мы ждём тебя в нашей команде, коллега!"
+    //     },
+    //     {
+    //         image: "./photo/photo02.jpg",
+    //         name: "Дмитрий Анушин",
+    //         position: "Директор филиала Ё-такси в Улан-Удэ",
+    //         quote: "Мы постоянно учимся и развиваемся, чтобы качественно предоставлять вам наши услуги!"
+    //     },
+    //     {
+    //         image: "./photo/photo03.jpg",
+    //         name: "Сергей Дунбинский",
+    //         position: "Директор Краснояского филиала Ё-такси",
+    //         quote: "Рынок такси активно развивается и мы развиваемся вместе с ним, ставя перед собой амбициозные цели"
+    //     },
+    //     {
+    //         image: "./photo/photo04.jpg",
+    //         name: "Вячеслав Виноградов",
+    //         position: "Директор Новокузнецкого филиала Ё-такси",
+    //         quote: "С нами Вы сможете получать достойный доход и реализовывать свои планы"
+    //     },
+    //     {
+    //         image: "./photo/photo05.jpg",
+    //         name: "Кочанова Мария",
+    //         position: "Разработчик цветной",
+    //         quote: "Некоторый текст"
+    //     },
+    // ];
 
     function Card(props) {
+        const photoURL = props.image.startsWith("http://")
+            ? props.image
+            : `http://127.0.0.1:8000${props.image}`;
         return (
             <li className='card'>
-                <img className="card-photo" src={props.image} alt="Employee Photo" />
+                <img className="card-photo" src={photoURL} alt="Employee Photo" />
                 <p className="card-name">
                     {props.name}
                 </p>
