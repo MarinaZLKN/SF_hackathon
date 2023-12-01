@@ -6,13 +6,14 @@ import RentAll from "./Main/Section4/RentAll.jsx";
 import RentHow from "./Main/Section4/RentHow.jsx";
 import Calculator from "./Main/Section3A/Calculator.jsx";
 import VideoSlider from "./Main/Section5/VideoSlider.jsx";
-import {setCityInfo, setVideos, setCarInfo} from "../actions";
-import {useDispatch, useSelector} from "react-redux";
+import { setCityInfo, setVideos, setCarInfo } from "../actions";
+import { useDispatch, useSelector } from "react-redux";
 import Section6 from "./Main/Section6/Section6.jsx";
 import Request from "./Main/Section6B/Request.jsx";
 import CarSlider from "./Main/Section3/CarSlider.jsx";
 import Geography from './Main/Geography/Geography.jsx';
 import Footer from "./Footer/Footer.jsx";
+import OurTeam from './Main/Section6A/OurTeam.jsx';
 
 
 function App() {
@@ -56,11 +57,11 @@ function App() {
 
             if (data.feedback) {
               const videos = data.feedback.map(feedback => ({
-              name: feedback.name,
-              url_video: feedback.url_video,
-            }));
-            dispatch(setVideos(videos));
-            console.log('Видео данные:', videos);
+                name: feedback.name,
+                url_video: feedback.url_video,
+              }));
+              dispatch(setVideos(videos));
+              console.log('Видео данные:', videos);
             }
             if (data.cars) {
               dispatch(setCarInfo(data.cars));
@@ -82,7 +83,7 @@ function App() {
   return (
     <div className="main-page">
       <header>
-        <Header cityInfo={cityInfo} scrollToSection={scrollToSection}  />
+        <Header cityInfo={cityInfo} scrollToSection={scrollToSection} />
       </header>
       <main>
         <section className="section-1">
@@ -92,30 +93,33 @@ function App() {
           <Advantages />
         </section>
         <section id="autopark" className="section-3">
-          <CarSlider carInfo={carInfo}/>
+          <CarSlider carInfo={carInfo} />
         </section>
         <section id="calculator" className="section-3A">
-          <Calculator scrollToSection={scrollToSection}/>
+          <Calculator scrollToSection={scrollToSection} />
         </section>
         <section id="conditions" className='section-4'>
           <RentAll />
           <RentHow />
         </section>
         <section className="section-5">
-            <VideoSlider videos={videos} city={cityInfo}/>
+          <VideoSlider videos={videos} city={cityInfo} />
         </section >
         <section className="section-6">
           <Section6 />
         </section>
+        <section className="section-6A">
+          <OurTeam />
+        </section>
         <section className="section-6B">
-            <Request/>
+          <Request />
         </section>
         <section id="contacts" className="Geography">
-          <Geography cityInfo={cityInfo}/>
+          <Geography cityInfo={cityInfo} />
         </section>
       </main>
       <footer className="section-8">
-        <Footer cityInfo={cityInfo}/>
+        <Footer cityInfo={cityInfo} />
 
       </footer>
     </div>
