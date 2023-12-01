@@ -193,7 +193,6 @@ function Header({cityInfo, scrollToSection}) {
                                                         type="text"
                                                         id="name"
                                                         name="name"
-                                                        placeholder="Иван"
                                                         value={formData.name}
                                                         onChange={handleInputChange}
                                                     />

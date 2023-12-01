@@ -124,3 +124,58 @@
     background: white;
     color: black;
 }
+
+@media (max-width: 375px) {
+    .footer-container{
+        height: 100%;
+    }
+    .footer-content{
+        padding-top: 40px;
+        padding-left: 20px;
+        position: relative;
+    }
+    .footer-info-block{
+        display: block;
+        gap: 16px;
+    }
+    .footer-official{
+        display: flex;
+        padding-bottom: 20px;
+    }
+    .f-i-1{
+        font-size: 16px;
+        padding-bottom: 10px;
+        line-height: 24px;
+    }
+    .f-i-2{
+        font-size: 14px;
+        line-height: 20px;
+        width: 40px;
+        padding-left: 40px;
+    }
+    .footer-official a::before {
+        display: none;
+    }
+
+    .footer-logo{
+        height: 112px;
+        font-size: 80px;
+        line-height: 112px;
+        padding-left:20px;
+        position: relative;
+        top: 30px
+    }
+    .footer-offices-addresses {
+        display: flex;
+        padding-top: 10px;
+        padding-right: 130px;
+    }
+    .footer-offices-addresses p {
+        flex-basis: calc(50% - 10px);
+        font-size: 12px;
+        line-height: 16px;
+    }
+    #hide{
+        display: none;
+    }
+}

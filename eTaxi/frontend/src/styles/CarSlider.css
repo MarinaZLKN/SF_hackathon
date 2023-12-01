@@ -219,3 +219,91 @@
 .custom-next-button-car img{
     filter: invert(1);
 }
+
+@media (max-width: 375px) {
+    .car-slider_container{
+        height: 600px;
+        overflow: hidden;
+    }
+    .slider_wrapper {
+      width: 100%;
+      max-height: 300px;
+    }
+    .car-slider-title{
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 40px;
+        padding-left: 20px;
+    }
+    .car-slider-tafif{
+        font-size: 16px;
+    }
+    .slider-1 {
+        width: 359px;
+        margin-left: -34px;
+
+    }
+
+    .slide,
+    .slide img {
+        width: 360px;
+        height: 182px;
+        margin-bottom: 15px;
+        object-fit: cover;
+    }
+    .slide {
+        transform: scale(0.7);
+        transition: 0.5s;
+        margin-bottom:150px;
+
+    }
+    .slide_text_car-name{
+        height: 30px;
+    }
+    .car-name{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .value-container {
+        width:90px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+        gap: 12px;
+    }
+    .prop_name,
+    .prop-value {
+        margin-left: 10px;
+    }
+
+    .separator {
+        border-right: 1px solid  var(--Dark-gray);
+        height: 76px;
+        margin-left: 10px;
+
+    }
+
+    .custom-next-button-car {
+        position: absolute;
+        top: 350px;
+        right: 100px;
+        width: 68px;
+        height: 68px;
+
+    }
+
+    .custom-prev-button-car {
+        background: white;
+        position: absolute;
+        top: 350px;
+        left: 100px;
+
+        width: 68px;
+        height: 68px;
+
+    }
+    .car-btn-slider{
+        display: flex;
+
+    }
+}

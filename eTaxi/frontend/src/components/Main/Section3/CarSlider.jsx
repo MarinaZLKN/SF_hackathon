@@ -36,10 +36,13 @@ function CarSlider ({carInfo}) {
 
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 375,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+            centerPadding: '10px',
+            variableWidth: true,
+            centerMode: true,
           dots: false,
           // nextArrow: <EmptyArrow />,
           // prevArrow: <EmptyArrow />,
