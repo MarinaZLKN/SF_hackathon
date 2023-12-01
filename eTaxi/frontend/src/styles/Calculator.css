@@ -153,3 +153,90 @@
     color: black;
     border: none;
 }
+
+ @media (max-width: 375px) {
+     .calc-container{
+        padding: 36px 0;
+        width: 100vw;
+         height: 1100px;
+    }
+    .calc-content{
+        display: block;
+
+    }
+    .calc-left{
+        padding: 0px 20px;
+
+
+    }
+
+     .calc-title-style{
+         font-size: 24px;
+         line-height: 32px;
+     }
+     .value-label {
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 8px;
+    }
+
+    .slider-value{
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+
+    .min-max-values span {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .calc-right{
+        margin-top: 50px;
+        margin-left: 20px;
+    }
+    .calc-right_title{
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 6px;
+    }
+
+    .calc-right_value1{
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 15px;
+    }
+    .calc-right_value2{
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+
+    .calc-right_subtitle{
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 15px;
+    }
+
+    .calc-btn{
+        display: flex;
+        width: 286px;
+        padding: 16px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--Grey);
+        background: var(--BG);
+        color:  #FFF;
+        font-family: var(--font-family);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+    }
+    .calc-btn:hover {
+        background-color: var(--Yellow);
+        color: black;
+        border: none;
+    }
+ }

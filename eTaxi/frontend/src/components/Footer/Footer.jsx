@@ -22,7 +22,7 @@ function Footer ({cityInfo}){
                                         </div>
                     </div>
                     <div className="footer-updates">
-                        <label className="f-i-1">Следите за нашими новостями:</label>
+                        <label id="hide" className="f-i-1">Следите за нашими новостями:</label>
                         <div className="footer-btns">
                             <button className="footer-btn">Youtube</button>
                             <button className="footer-btn">Вконтакте</button>
