@@ -51,4 +51,36 @@
     line-height: 28px;
 }
 
-@media (max-width: 375px) {}
+@media (max-width: 375px) {
+    .container-adv {
+        padding: 44px 20px;
+    }
+    .list-adv {
+        margin-top: 75px;
+        display: block;
+    }
+    .adv-card {
+        padding: 20px;
+        width: 335px;
+        height: 132px;
+        margin-bottom: 40px;
+    }
+    .adv-card--subtitle {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .adv-card--text {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .adv-card::before {
+        top: -30px;
+    }
+
+    .adv-card::after {
+        top: -24px;
+        width: 90%;
+    }
+}

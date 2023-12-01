@@ -50,3 +50,13 @@ body {
 .section-8 {
     background-color: var(--BG);
 }
+
+@media (max-width: 375px) {
+    .subtitle {
+        margin-bottom: 80px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 32px;
+        text-transform: uppercase;
+    }
+}
