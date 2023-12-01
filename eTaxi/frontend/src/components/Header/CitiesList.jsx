@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../../styles/Header.css';
 import {useDispatch} from "react-redux";
-import {setCarInfo, setCityInfo, setVideos} from "../../actions";
+import {setCarInfo, setCityInfo, setEmployeeInfo, setVideos} from "../../actions";
 
 function CitiesList({handleCitySelect}) {
     const [cities, setCities] = useState([]);
@@ -23,6 +23,15 @@ function CitiesList({handleCitySelect}) {
           if (cityData && cityData.cars) {
             const photosData = cityData.cars
             dispatch(setCarInfo(photosData));
+          }
+          if (cityData && cityData.employees) {
+            const employyesData = cityData.employees.map(employee => ({
+                image: employee.image,
+                name: employee.name,
+                position: employee.position
+              }))
+              console.log('employyesData :', employyesData)
+            dispatch(setEmployeeInfo(employyesData));
           }
 
           handleCitySelect();
