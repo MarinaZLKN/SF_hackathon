@@ -6,7 +6,7 @@ import RentAll from "./Main/Section4/RentAll.jsx";
 import RentHow from "./Main/Section4/RentHow.jsx";
 import Calculator from "./Main/Section3A/Calculator.jsx";
 import VideoSlider from "./Main/Section5/VideoSlider.jsx";
-import { setCityInfo, setVideos, setCarInfo } from "../actions";
+import {setCityInfo, setVideos, setCarInfo, setEmployeeInfo} from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import Section6 from "./Main/Section6/Section6.jsx";
 import Request from "./Main/Section6B/Request.jsx";
@@ -20,6 +20,7 @@ function App() {
   const cityInfo = useSelector((state) => state.cityInfo);
   const videos = useSelector((state) => state.videos);
   const carInfo = useSelector((state) => state.carInfo);
+  const employeeInfo = useSelector((state) => state.employeeInfo);
   const dispatch = useDispatch();
 
   const [latitude, setLatitude] = useState(null);
@@ -66,6 +67,15 @@ function App() {
             if (data.cars) {
               dispatch(setCarInfo(data.cars));
             }
+            if (data.city.employees) {
+              const employees = data.city.employees.map(employee => ({
+                image: employee.image,
+                name: employee.name,
+                position: employee.position
+              }))
+              console.log('Раобтники :', employees);
+              dispatch(setEmployeeInfo(employees));
+            }
           } else {
             console.error('Ошибка при получении данных с сервера');
           }
@@ -109,7 +119,7 @@ function App() {
           <Section6 />
         </section>
         <section className="section-6A">
-          <OurTeam />
+          <OurTeam employeeInfo={employeeInfo}/>
         </section>
         <section className="section-6B">
           <Request />

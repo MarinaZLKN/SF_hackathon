@@ -31,8 +31,18 @@ const carInfoReducer = (state = [], action) => {
   }
 };
 
+const employeeReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'SET_EMPLOYEE_INFO':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 export default combineReducers({
   cityInfo: cityInfoReducer,
   videos: videosReducer,
   carInfo: carInfoReducer,
+  employeeInfo: employeeReducer,
 });
