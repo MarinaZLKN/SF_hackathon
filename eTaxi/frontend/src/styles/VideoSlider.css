@@ -100,3 +100,8 @@
     font-weight: 200;
     line-height: 28px;
 }
+@media (max-width: 375px) {
+    .container-video{
+        display: none;
+    }
+}

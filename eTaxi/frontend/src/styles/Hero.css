@@ -155,8 +155,7 @@
 @media (max-width: 375px) {
     .hero-container{
         width: 100%;
-        height: 732px;
-        background: var(--BG);
+        height: 630px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -164,7 +163,7 @@
 
 }
     .hero-upper{
-        padding-top: 60px;
+        padding-top: 160px;
         padding-bottom: 20px;
         padding-left: 20px;
 
@@ -199,13 +198,12 @@
     .light-glow::before {
         width: 500px;
         height: 150px;
-
     }
 
     .hero-down{
         width: 100%;
         height: 204px;
-        border-top: 1px solid var(--Grey, #CBCCCE);
+        border-top: none;
         display: flex;
         align-items: center;
     }
@@ -225,18 +223,18 @@
     }
     .hero-down_right-block {
         display: flex;
-        align-items: flex-start;
-        flex-direction: row;
-
+        gap: 50px;
+        margin-left: 50px;
 
     }
     .hero-down_right-block-1{
-        display: flex;
+
         width: 159px;
-        justify-content: flex-end;
-        align-items: center;
-
     }
-
-
+    .down_right-title{
+        font-size: 16px;
+        line-height: 20px;
+        padding-bottom: 10px;
+        padding-right: 5px;
+    }
 }

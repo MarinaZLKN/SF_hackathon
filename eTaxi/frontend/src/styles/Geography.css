@@ -182,3 +182,9 @@ button {
     left: 454px;
     top: 402px;
 }
+
+@media (max-width: 375px) {
+    .geography-container{
+        display: none;
+    }
+}
