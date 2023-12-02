@@ -16,20 +16,20 @@ def find_nearest_city(lat, lon):
     return cities_dict[min(cities_dict)]
 
 
-def send_to_bitrix(name, phone_number, comment):
-    webhook_url = 'https://b24-t0gi8k.bitrix24.ru/rest/1/uoo2uq0zw4ut5ub6/'
+def send_to_bitrix(instance):
+    webhook_url = 'https://b24-t0gi8k.bitrix24.ru/rest/1/uttd7fwuv1bhgq61/'
     b = Bitrix(webhook_url)
     method = 'crm.lead.add'
-        
+    
     data = [
         {
             'fields':{
-                'TITLE': 'Новый лид',
-                'NAME': name,
+                # 'TITLE': 'Новый лид',
+                'NAME': instance.name,
                 'PHONE':[
-                    {'VALUE': phone_number}
+                    {'VALUE': instance.phone_number}
                 ],
-                'COMMENTS': comment,
+                'COMMENTS': instance.comment,
                 # 'ADDRESS_CITY': city
             } 
         }   
