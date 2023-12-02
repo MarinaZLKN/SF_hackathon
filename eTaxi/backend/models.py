@@ -87,3 +87,16 @@ class Feedback(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Driver(models.Model):
+    name = models.CharField(max_length=64)
+    phone_number = models.IntegerField()
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self) -> str:
+        return f"{self.name}"
