@@ -35,3 +35,10 @@ class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
         fields = ('id', 'city', 'phone_number', 'working_hours', 'latitude', 'longitude', 'offices', 'cars', 'employees', 'feedback')
+
+
+class DriverSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Driver
+        fields = '__all__'
+
