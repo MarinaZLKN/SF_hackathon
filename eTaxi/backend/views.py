@@ -1,24 +1,14 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import *
 from .serializers import *
-from .services import find_nearest_city, send_to_bitrix
+from .services import find_nearest_city
 
-class SendLeadToBitrix(APIView):
-    def post(self, request):
-        try:
-            data = request.data
 
-            name = data.get('name')
-            phone_number = data.get('phone')
-            comment = data.get('comment')
-
-            send_to_bitrix(name, phone_number, comment)
-
-            return Response({'status': 'success'})
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+class DriverAPICreate(generics.CreateAPIView):
+    queryset = Driver.objects.all()
+    serializer_class = DriverSerializer
 
 
 class GetCityInfoByCoordinates(APIView):
