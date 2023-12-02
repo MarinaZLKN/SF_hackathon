@@ -4,7 +4,7 @@ import '../../../styles/Request.css';
 function Request () {
     const [formData, setFormData] = useState({
         name: "",
-        phone: "",
+        phone_number: "",
         comment: "",
     });
     const handleInputChange = (event) => {
@@ -21,7 +21,7 @@ function Request () {
 
         const requestData = {
           name: formData.name,
-          phone: formData.phone,
+          phone_number: formData.phone_number,
           comment: formData.comment,
         };
 
@@ -70,9 +70,9 @@ function Request () {
                                 <input
                                   type="tel"
                                   id="phone"
-                                  name="phone"
+                                  name="phone_number"
                                   placeholder="+ 7 (___)___-__-__"
-                                  value={formData.phone}
+                                  value={formData.phone_number}
                                   onChange={handleInputChange}
                                 />
                             </div>

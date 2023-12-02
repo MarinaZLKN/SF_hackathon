@@ -44,7 +44,7 @@ function Header({cityInfo, scrollToSection}) {
 
     const [formData, setFormData] = useState({
         name: "",
-        phone: "",
+        phone_number: "",
         comment: "",
     });
     const handleInputChange = (event) => {
@@ -60,7 +60,7 @@ function Header({cityInfo, scrollToSection}) {
 
         const requestData = {
           name: formData.name,
-          phone: formData.phone,
+          phone_number: formData.phone_number,
           comment: formData.comment,
         };
 
@@ -202,8 +202,8 @@ function Header({cityInfo, scrollToSection}) {
                                                     <input
                                                         type="text"
                                                         id="phone"
-                                                        name="phone"
-                                                        value={formData.phone}
+                                                        name="phone_number"
+                                                        value={formData.phone_number}
                                                         onChange={handleInputChange}
                                                     />
                                                 </div>
