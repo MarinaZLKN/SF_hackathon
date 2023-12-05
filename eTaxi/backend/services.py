@@ -17,7 +17,7 @@ def find_nearest_city(lat, lon):
 
 
 def send_to_bitrix(instance):
-    webhook_url = 'https://b24-t0gi8k.bitrix24.ru/rest/1/uttd7fwuv1bhgq61/'
+    webhook_url = 'https://b24-bqhmwv.bitrix24.ru/rest/1/8hsjwhea5c0f8ctk/'
     b = Bitrix(webhook_url)
     method = 'crm.lead.add'
     
